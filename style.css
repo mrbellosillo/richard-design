@@ -1,0 +1,2157 @@
+html {
+  scroll-behavior: smooth
+}
+
+/* Ensure navbar links feel like buttons */
+.navbar a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Sticky Header Logic */
+
+/* Optional: Offset for your Fixed Header */
+/* Since your header is fixed, it might cover your section titles. 
+   This ensures the scroll stops 100px above the actual section. */
+section {
+  scroll-margin-top: 100px; 
+}
+
+.landing-page {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 791px; /* Consider changing to min-height: 100vh; later for responsiveness */
+}
+
+.landing-page .right-side {
+  position: absolute;
+  top: 115px;
+  left: calc(50% + 100px);      /* example: centered + offset — adjust as needed */
+  width: min(612px, 45vw);
+  height: auto;                 /* or keep fixed if design requires it */
+  aspect-ratio: 612 / 613;      /* preserves proportions if height auto */
+  overflow: visible;
+}
+
+/* Main profile photo – updated to match your x:132, y:32 description */
+.landing-page .img {
+  position: absolute;
+  top: 32px;
+  left: 132px;
+  width: 360px;
+  height: 542px;
+  object-fit: cover;
+  object-position: 25%;
+}
+
+/* Inline SVG lines – all positioned exactly as you described */
+
+/* Top edge line: x:0, y:32, w:656, 4px, gray-40 */
+.landing-page .line-top {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 600px;
+  height: 4px;
+}
+
+/* Bottom edge line: x:39, y:575, w:663, 4px, gray-40 */
+.landing-page .line-bottom {
+  position: absolute;
+  top: 574px;
+  left: 39px;
+  width: 500px;
+  height: 4px;
+}
+
+/* Right edge line: x:491.88, y:0, h:613, 4px, gray-40 */
+.landing-page .line-right {
+  position: absolute;
+  top: 0;
+  right: 120px;                /* ← 96px from RIGHT edge */
+  left: auto;                 /* remove old left value */
+  width: 4px;
+  height: 613px;
+}
+
+/* Left edge line: x:132.47, y:0, h:676.93 ≈677, 4px, gray-40 */
+.landing-page .line-left {
+  position: absolute;
+  top: 0;
+  left: 132.47px;
+  width: 4px;
+  height: 677px;
+}
+
+/* Base styles for all inline SVG lines */
+.landing-page svg.line-svg {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Frame containing left-side content */
+.landing-page .frame {
+  display: flex;
+  flex-direction: column;
+  width: 718px;
+  align-items: flex-start;
+  gap: 28px;
+  position: absolute;
+  top: 135px;
+  left: 96px;
+}
+
+.landing-page .left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.landing-page .div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.landing-page .frame-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.landing-page .heading {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--h-1-font-family);
+  font-weight: var(--h-3-font-weight);
+  color: var(--gray-10);
+  font-size: 104px;
+  letter-spacing: -4.16px;
+  line-height: 124.8px;
+}
+
+.landing-page .text-wrapper { /* "UI/UX Designer" */
+  position: relative;
+  align-self: stretch;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 400;
+  color: var(--main-accent-20);
+  font-size: 42px;
+  letter-spacing: -0.84px;
+  line-height: 56px;
+}
+
+.landing-page .subtext {
+  position: relative;
+  width: 611px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  color: var(--gray-20);
+  font-size: 22px;
+  letter-spacing: -0.22px;
+  line-height: 32px;
+}
+
+.landing-page .CT-as {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.landing-page .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--main-accent-20);
+}
+
+.landing-page .div-wrapper {
+  /* ... your existing styles ... */
+  cursor: pointer;          /* Shows the hand icon on hover */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Very subtle base shadow */
+  border: 1px solid var(--main-accent-20);
+}
+
+/* Hover State */
+.landing-page .div-wrapper:hover {
+  transform: translateY(-4px); /* A slightly taller lift for "High-Class" feel */
+  filter: brightness(1.1); /* Makes the green look "backlit" or glowing */
+  box-shadow: 0 12px 24px rgba(151, 222, 155, 0.3); /* The "Premium" colored glow */
+}
+
+.landing-page .div-wrapper:active {
+  transform: translateY(-1px); /* Responds to the physical "click" */
+}
+
+.landing-page .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  color: var(--light-text-98);
+  font-size: var(--body-font-size);
+  text-align: center;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+  font-style: var(--body-font-style);
+}
+
+/* Update your existing .frame-3 */
+.landing-page .frame-3 {
+  border: 1px solid var(--main-accent-20);
+  background-color: transparent;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.landing-page .frame-3:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(151, 222, 155, 0.15);
+}
+
+.landing-page .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  position: relative;
+  flex: 0 0 auto;
+  border: 1px solid var(--main-accent-20);
+}
+
+.landing-page .frame-3 {
+  /* ... your existing styles ... */
+  cursor: pointer;          /* Shows the hand icon */
+  transition: all 0.3s ease; /* Makes the transition smooth */
+}
+
+/* Hover State */
+.landing-page .frame-3:hover {
+  /* 1. Use the same variable as the first button */
+  border-color: var(--main-accent-20); 
+  
+  /* 2. Apply the same brightness (1.5) so the 'lighten' effect matches */
+  filter: brightness(1.5); 
+  
+  /* 3. Keep the lift effect consistent */
+  transform: translateY(-2px);
+  
+  /* Optional: If you want a subtle glow that matches the color */
+  box-shadow: 0 0 10px rgba(151, 222, 155, 0.2); 
+}
+
+.landing-page .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  color: var(--main-accent-20);
+  font-size: var(--body-font-size);
+  text-align: center;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+  font-style: var(--body-font-style);
+}
+
+.tilt-btn {
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform; /* Performance boost for animations */
+}
+
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-effect 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.landing-page .stats {
+  display: flex;
+  width: 511px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 24px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Add these to your CSS */
+/* The base state (hidden) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+/* The active state (when scrolled into view) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for grids/lists */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+.landing-page .frame-4,
+.landing-page .frame-5 {
+  display: flex;
+  flex-direction: column;
+  width: 94px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.landing-page .text-wrapper-4 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--h-6-font-family);
+  font-weight: var(--h-6-font-weight);
+  color: var(--gray-20);
+  font-size: var(--h-6-font-size);
+  letter-spacing: var(--h-6-letter-spacing);
+  line-height: var(--h-6-line-height);
+  font-style: var(--h-6-font-style);
+}
+
+.landing-page .text-wrapper-5 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -6px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  color: var(--secondary-40);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+/* Header styles remain unchanged */
+.landing-page .header {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Changed from 1440px to 100% to span the screen */
+  align-items: center; /* Centers the content within the fixed bar */
+  gap: 10px;
+  padding: 24px 140px; /* Slightly reduced top padding for a slimmer feel */
+  position: fixed; /* Pins it to the viewport */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures it stays above all other sections */
+  background-color: var(--gray-93); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Modern "Glassmorphism" effect */
+  border-bottom: 1px solid var(--gray-90);
+  transition: all 0.4s ease;
+}
+
+.header.minimized {
+    padding: 10px 48px;
+    background: var(--gray-93); /* Slightly more opaque glass */
+    backdrop-filter: blur(12px);
+    transform: translateY(-1%); /* Pulls it up slightly to hide bulk */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Scale down the logo/elements inside when minimized */
+.header.minimized .frame-6 {
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+/* 3. Hover to Maximize (The "Peek" Logic) */
+.header.minimized:hover {
+    transform: translateY(0); /* Slides back down fully */
+    padding: 20px 48px; /* Returns to original size */
+    background: var(--gray-93);
+}
+
+.landing-page .header-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.landing-page .frame-6 {
+  position: relative;
+  width: 49px;
+  height: 31px;
+}
+
+.landing-page .vector,
+.landing-page .vector-2,
+.landing-page .vector-3 {
+  position: absolute;
+  top: 2px;
+  height: 61px;
+}
+
+.landing-page .vector   { left: 23px; width: 34px; }
+.landing-page .vector-2 { left: 6px;  width: 43px; }
+.landing-page .vector-3 { left: -11px; width: 43px; }
+
+.landing-page .navbar {
+  display: inline-flex;
+  height: 31px;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.landing-page .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.5px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  color: var(--gray-30);
+  font-size: var(--body-font-size);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+  font-style: var(--body-font-style);
+}
+
+/* Target the 'active' class on your nav items */
+.text-wrapper-6.active, 
+.frame-7.active .text-wrapper-7 {
+  color: var(--main-accent-20) !important; /* Your signature green */
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+/* If you want a persistent underline for the active link */
+.text-wrapper-6 {
+  position: relative;
+}
+
+.text-wrapper-6.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-accent-20);
+  transform: scaleX(1);
+}
+
+#nav-indicator {
+  position: absolute;
+  bottom: -4px;
+  height: 2px;
+  background-color: var(--main-accent-20);
+  border-radius: 0px;
+  opacity: 1; /* Visible by default */
+  
+  /* FASTER TRANSITION: 0.3s instead of 0.5s with a more aggressive curve */
+  transition: left 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+              width 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+              opacity 0.2s ease;
+    
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Remove your old individual underlines if you had any */
+.text-wrapper-6::after { display: none !important; }
+
+.landing-page .text-wrapper-6:hover {
+  color: var(--main-accent-20);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* 1. Base state for links */
+.landing-page .text-wrapper-6, 
+.landing-page .text-wrapper-7 {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+}
+
+/* 2. When the user hovers over the NAVBAR, dim ALL links slightly */
+.landing-page .navbar:hover .text-wrapper-6,
+.landing-page .navbar:hover .frame-7 {
+  opacity: 0.5;
+}
+
+/* 3. But keep the one they are actually hovering on at full brightness and change color */
+.landing-page .text-wrapper-6:hover,
+.landing-page .frame-7:hover {
+  opacity: 1 !important;
+  color: var(--main-accent-20);
+}
+
+.landing-page .frame-7 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 4px 12px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-top: -4.5px;
+  margin-bottom: -4.5px;
+  border: 1px solid var(--main-accent-20);
+}
+
+.landing-page .frame-7 {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landing-page .frame-7:hover {
+  background-color: var(--main-accent-20);
+  border-color: var(--main-accent-20);
+  transform: translateY(-1px); /* Very tiny lift */
+}
+
+/* Make sure the text color flips to white (or your dark bg) so it's readable */
+.landing-page .frame-7:hover .text-wrapper-7 {
+  color: #ffffff; /* Or your preferred dark color */
+}
+
+.landing-page .text-wrapper-7 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  color: var(--main-accent-20);
+  font-size: var(--body-font-size);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+  font-style: var(--body-font-style);
+}
+
+.about-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 6rem 5vw 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.decor-line {
+  position: absolute;
+  pointer-events: none;
+}
+
+.decor-line.horizontal {
+  top: 294px;               /* your adjusted y ≈ 294–306px */
+  left: 0;
+  width: 784px;
+  height: 4px;
+}
+
+.decor-line.vertical {
+  top: 0px;                      /* y:8 */
+  left: 96px;                /* x:96 */
+  width: 4px;
+  height: 863px;                 /* h:863 */
+}
+
+.decor-line line {
+  stroke: var(--gray-40);
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: butt;
+}
+
+/* Title */
+/* Title – big, bold, matches screenshot */
+.section-title {
+  font-family: var(--h-2-font-family);
+  font-weight: var(--h-2-font-weight);
+  font-size: var(--h-2-font-size);      /* huge on desktop, scales down */
+  line-height: var(--h-2-line-height);
+  letter-spacing: var(--h-2-letter-spacing);
+  color: var(--gray-10);                         /* matches Anima's #1a1818 for "ABOUT" */
+  margin: 0 0 0px 0;
+  text-transform: uppercase;
+  text-align: left;                         /* or center on mobile if preferred */
+  position: relative;
+}
+
+.section-title .highlight {
+  color: var(--main-accent-20);
+}
+
+/* Wrapper */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  top: -32px;
+  left: -16px;
+}
+
+/* Bio paragraphs */
+.bio {
+  gap: 24px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--body-font-size); 
+  line-height: var(--body-line-height);
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--gray-30);
+  padding-left: 82px;
+}
+
+.bio p:last-child {
+  margin-bottom: 32px;
+}
+
+.bio strong {
+  color: var(--gray-30);
+  font-weight: 700;
+}
+
+/* Three-column block (Skills / Tools / Experience) */
+.skills-tools-experience {
+  display: flex;
+  justify-content: space-between; /* Spreads columns out evenly */
+  align-items: flex-start;
+  gap: 40px; /* A more reasonable gap */
+  padding-left: 82px;
+  max-width: 1175px; /* Keeps it from stretching too wide on huge monitors */
+}
+
+/* Give each column a bit of breathing room */
+.skills-tools-experience > div {
+  flex: 1; 
+  min-width: 150px;
+}
+
+/* Column titles */
+.column-title {
+  font-family: var(--h-5-font-family);
+  font-size: var(--h-5-font-size);
+  font-weight: var(--h-5-font-weight);
+  line-height: var(--h-5-line-height);
+  color: var(--gray-20);
+  text-transform: uppercase;
+  letter-spacing: var(--h-5-letter-spacing);
+  margin-bottom: 12px;
+}
+
+/* Lists */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  color: var(--gray-30);
+  letter-spacing: var(--body-letter-spacing);
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;               /* space between icon and text */
+  font-size: var(--body-font-size);
+  color: var(--gray-30);
+  margin-bottom: 20px;
+  white-space: nowrap; 
+  letter-spacing: var(--body-letter-spacing);
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+}
+
+/* Experience items */
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.role-date-wrapper {
+  display: flex;
+  justify-content: space-between; 
+  align-items: baseline; /* Aligns the bottom of the text perfectly */
+  width: 100%;
+  gap: 16px; /* Prevents text from touching if the screen shrinks */
+  margin-bottom: 4px;
+}
+
+.role {
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--gray-30);
+    flex-shrink: 1; 
+}
+
+.date {
+  color: var(--gray-40);
+  font-size: var(--small-font-size);
+  font-weight: var(--small-font-weight);
+  font-family: var(--small-font-family);
+  line-height: var(--small-line-height);
+  letter-spacing: var(--small-letter-spacing);
+  /* 3. REMOVE the large margins so it aligns vertically with the role */
+  flex-shrink: 0; 
+  white-space: nowrap;
+}
+
+.company {
+  color: var(--gray-40);
+  font-size: var(--small-font-size);
+  font-weight: var(--small-font-weight);
+  font-family: var(--small-font-family);
+  line-height: var(--small-line-height);
+  letter-spacing: var(--small-letter-spacing);
+  font-style: italic;
+  /* 4. This forces the company name to its own line */
+  flex-basis: 100%; 
+  margin-top: 4px; /* Adjust this for the vertical gap you want */
+}
+
+.icon-frame {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.icon-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.case-studies-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 176px 0vw 58px;
+  overflow: visible;
+}
+
+.case-study-line {
+  position: absolute;
+  pointer-events: none;
+}
+
+.case-study-line.horizontal {
+  top: 580px;               /* your adjusted y ≈ 294–306px */
+  left: 280px;
+  width: 1046px;
+  height: 4px;
+}
+
+.case-study-line.vertical {
+  top: 104px;                      /* y:8 */
+  left: 1240px;                /* x:96 */
+  width: 4px;
+  height: 651px;  
+}
+
+.case-study-line line {
+  stroke: var(--gray-40);
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: butt;
+}
+
+.case-study-section-title {
+  font-family: var(--h-2-font-family);
+  font-weight: var(--h-2-font-weight);
+  font-size: var(--h-2-font-size);      /* huge on desktop, scales down */
+  line-height: 232px;
+  letter-spacing: var(--h-2-letter-spacing);
+  color: var(--gray-10);                         /* matches Anima's #1a1818 for "ABOUT" */
+  margin-right: -40px;
+  margin-bottom: 72px;
+  text-transform: uppercase;
+  text-align: right;                         /* or center on mobile if preferred */
+  position: relative; 
+}
+
+.case-study-section-title .highlight {
+  color: var(--main-accent-20);
+}
+
+.case-list {
+  display: flex;
+  flex-direction: column;
+  /* 4rem is roughly 64px. If your Figma gap is different, 
+     use that exact px value here. */
+  gap: 24px;
+  width: 100%; 
+  
+  /* This ensures the list aligns with your 1440px max-width 
+     about-section mentioned earlier */
+  width: 100%;
+  max-width: 1222px; /* 1141px (row) + 32px (gap) + 50px (arrow) approx */
+  margin-top: -24px;    /* Centers the whole list on the screen */
+}
+
+/* Single case item – matches Anima structure */
+/* 1. The Main Row Container */
+.first-case-study {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  padding: 0 0 24px;
+  min-width: 1223px;
+  border-bottom: 1px solid var(--gray-80);
+}
+
+.first-case-study {
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  /* Premium transition curve */
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), 
+              box-shadow 0.6s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.first-case-study:hover {
+  transform: translateY(-10px);
+  background: var(--gray-93); /* Becomes solid white to show the shadow */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* 2. The Title - Elegant Spacing & Underline */
+/* 1. The Title Container */
+.case-title {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  transition: color 0.4s ease;
+  /* Prevent word-wrap during the transition */
+  white-space: nowrap; 
+}
+
+/* 2. The "Ghost" Technique: Reserves space so it never jumps to a 2nd line */
+.case-title::before {
+  display: block;
+  content: attr(data-text); /* Pulls text from HTML attribute */
+  font-weight: 500; /* Match your hover weight if you change it */
+  letter-spacing: 0.5px; /* Match your hover spacing */
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 3. The Actual Hover Interaction */
+.first-case-study:hover .case-title {
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+/* 4. The High-End Underline (Refined) */
+.case-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color, #000);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.1, 0, 0, 1);
+}
+
+.first-case-study:hover .case-title::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 4. The Image - Subtle Exposure Shift */
+/* 1. The Image Container (The Mask) */
+.case-image-wrap {
+  width: 140.62px; /* Matches your current image width */
+  height: 100px;   /* Matches your current image height */
+  overflow: hidden; /* Clips the image so it doesn't spill out */
+  border: 1px solid var(--gray-70);
+  border-radius: 4px; /* Softens the corners */
+}
+
+.case-image-wrap img {
+  width: 100%;
+  display: block;
+  /* Smooth transition for the scale */
+  transition: transform 0.8s cubic-bezier(0.1, 0, 0, 1), 
+              filter 0.6s ease;
+}
+
+/* Hover: Image gets 8% bigger internally */
+.first-case-study:hover .daily-QR-code-page {
+  transform: scale(1.2); /* 20% zoom */
+}
+
+/* 2. The Arrow Wrapper */
+.subway-up-arrow {
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), 
+              opacity 0.4s ease;
+  opacity: 0.5;
+}
+
+.first-case-study:hover .subway-up-arrow {
+  opacity: 1;
+  /* Makes the icon bigger and slides it diagonally */
+  transform: scale(1.1)
+            rotate(45deg); /* Points the arrow to the top-right corner */
+
+}
+
+/* Optional: If the arrow is an SVG/Vector, make it smoother */
+.subway-up-arrow-wrapper img {
+  transition: filter 0.4s ease;
+}
+
+.first-case-study:hover .subway-up-arrow-wrapper img {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+/* 2. Anima's "frame" */
+.case-content-wrapper {
+  display: flex;
+  width: 1141.62px; /* Exact Figma Width */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 3. Anima's "case-study" group */
+.case-info-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 61px; /* Exact Figma spacing between Number and Text */
+}
+
+.case-number {
+  font-family: var(--body-font-family);
+  font-weight: 700;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  color: var(--gray-40);
+  font-size: var(--body-font-size);
+  white-space: nowrap;
+}
+
+/* 4. Anima's "div" stack */
+.case-text-stack {
+  display: flex;
+  flex-direction: column;
+  width: 636px; /* Exact Figma Width */
+  gap: 8px;
+}
+
+/* 5. Meta Row (Category + Year) */
+.case-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-tag,
+.category-tag-2,
+.category-tag-3,
+.category-tag-4 {
+  padding: 4px 8px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  border-radius: 0px; 
+}
+
+.category-tag {
+    background-color: var(--periwinkle-85);
+}
+
+.category-tag-2 {
+  background-color: #B9E6F9;
+}
+
+.category-tag-3 {
+  background-color: #B2F2FF;
+}
+
+.category-tag-4 {
+  background-color: #BDF5CC;
+}
+
+.soft-app,
+.soft-app-2,
+.soft-app-3,
+.soft-app-4 {
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+}
+
+.soft-app {
+    color: var(--navy-25);
+}
+
+.soft-app-2 {
+  color: #0B5575;
+}
+
+.soft-app-3 {
+  color: #006A80;
+}
+
+.soft-app-4 {
+  color: #116F2B;
+}
+
+.case-date {
+  color: var(--gray-40);
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+}
+
+/* 6. Body text (Title, Desc, Roles) */
+.case-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-title {
+  font-family: var(--h-6-font-family);
+  font-size: var(--h-6-font-size);
+  font-weight: 700;
+  letter-spacing: var(--h-6-letter-spacing);
+  line-height: var(--h-6-line-height);
+  color: var(--gray-20);
+  margin: 0;
+}
+
+.p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  color: var(--gray-30);
+  margin: 0;
+}
+
+/* 7. Roles/Tools Tags */
+.role-tags {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.tag-frame {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  border: 1px solid var(--gray-80);
+  border-radius: 0px;
+}
+
+.role-tools {
+  color: var(--gray-30);
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  line-height: var(--small-line-height);
+  letter-spacing: var(--small-letter-spacing);
+}
+
+/* 8. Image */
+.daily-QR-code-page {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* 9. The Arrow Circle */
+.subway-up-arrow-wrapper {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray-50);
+  box-sizing: border-box; 
+  border-radius: 25px;
+  flex-shrink: 0;
+}
+
+.subway-up-arrow {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container Setup */
+.mini-projects-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 0px;
+  position: relative;
+  overflow: visible;
+  height: auto;
+}
+
+/* Decorative Lines (Grok Style) */
+.decor-line {
+  position: absolute;
+  pointer-events: none;
+}
+
+.decor-line.horizontal-mini {
+  top: 408px; /* Adjust based on your text height */
+  left: 0;
+  width: 1296px;
+  height: 4px;
+}
+
+.decor-line.vertical-mini {
+  top: 392px;
+  left: 1296px; /* Exactly on the right margin */
+  width: 4px;
+  height: 782px;
+  bottom: 0; 
+  pointer-events: none;
+}
+
+/* Typography */
+.mini-main-title {
+  font-family: var(--h-3-font-family);
+  font-weight: var(--h-3-font-weight);
+  font-size: var(--h-3-font-size);      /* huge on desktop, scales down */
+  line-height: var(--h-3-line-height);
+  letter-spacing: var(--h-3-letter-spacing);
+  color: var(--gray-10);                       /* matches Anima's #1a1818 for "ABOUT" */
+  text-transform: uppercase;
+  text-align: left;                         /* or center on mobile if preferred */
+  position: relative; 
+}
+.text-black { color: var(--gray-10); }
+.text-green { color: var(--main-accent-20); }
+
+.mini-header {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;               /* The 24px gap from Figma */
+  position: relative;     /* Gap from Title to this Frame */
+  margin-bottom: 104px;     /* Gap from this Frame to the Cards */
+}
+.mini-intro-text {
+  width: 660px;
+  color: var(--gray-30);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+}
+
+/* Grid Layout */
+.mini-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 48px 24px;
+  height: auto;          /* Ensures the grid doesn't stretch */
+  align-items: start;
+}
+
+/* 1. Ensure the card handles the image zoom without overflowing */
+.mini-card {
+  overflow: hidden; /* Clips the image when it scales up */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* 2. The Image Hover Effect */
+.mini-card-img,
+.mini-card-img-task-7 {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.mini-card:hover .mini-card-img,
+.mini-card:hover .mini-card-img-task-7 {
+  transform: scale(1.08); /* Slightly more zoom */
+  filter: saturate(1.2) contrast(1.1); /* Makes the colors "pop" instead of dimming */
+}
+
+/* 3. The "View" Text Feedback */
+.mini-card .view-text {
+  transition: color 0.3s ease;
+}
+
+.mini-card:hover .view-text {
+  color: var(--main-accent-20); /* Changes "View" to your signature green */
+  font-weight: 700;
+}
+
+/* 4. The Arrow Circle Feedback */
+/* Card Styling (Anima Exact) */
+.mini-card {
+  width: 400px;
+  background-color: #f2f2f2;
+  box-shadow: var(--cards);
+  padding: 0 24px 16px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  height: auto;
+  align-self: flex-start;
+}
+
+.mini-card {
+  transition: transform 0.3s ease; /* Makes the lift smooth */
+}
+
+.mini-card:hover {
+  transform: translateY(-8px); /* Card lifts up by 8px on hover */
+}
+
+.mini-card-img {
+  width: 400px;
+  height: 204px;
+  object-fit: cover;
+  position: relative;
+  margin-left: -24.00px;
+  margin-right: -24.00px;
+}
+
+.mini-card-img-task-7 {
+  width: 400px;
+  height: 204px;
+  object-fit: cover;
+  position: relative;
+  margin-left: -24.00px;
+  margin-right: -24.00px;
+  object-position: center 3%;
+}
+
+.mini-card-content {
+  width: 347px;
+}
+
+.mini-project-name {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: 700;
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
+  color: var(--gray-20);
+  margin-top: 0;
+  margin-bottom: 6px;
+  text-wrap: nowrap;
+  transition: letter-spacing 0.4s cubic-bezier(0.1, 0, 0, 1);
+}
+
+.mini-card:hover .mini-project-name {
+  letter-spacing: 0.2px; /* Very subtle "expansion" feel */
+  color: #000; /* Deepens the black for focus */
+}
+
+.mini-project-desc {
+  font-family: var(--small-font-family);
+  font-size: var(--small-font-size);
+  font-weight: var(--small-font-weight);
+  line-height: var(--small-line-height);
+  letter-spacing: var(--small-letter-spacing);
+  color: var(--gray-30);
+  /* Standard property for modern compatibility */
+  line-clamp: 3; 
+  /* Legacy -webkit properties for older browser support */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+/* Tags (Anima Colors) */
+.mini-tag {
+  display: flex;
+  padding: 4px 8px;
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  border-radius: 0px;
+  margin-bottom: 8px;
+}
+
+.mini-tag {
+  transition: all 0.4s cubic-bezier(0.1, 0, 0, 1);
+  /* A slightly rounded edge feels more modern than 0px, but less 'bubbly' than 24px */ 
+}
+
+.mini-card:hover .mini-tag {
+  /* This creates a 'glow' effect using the tag's own background color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+  letter-spacing: 1px; /* Subtle typographic expansion */
+}
+
+.tag-color-theory { background-color: #ffebb2; color: #806000; }
+.tag-typography { background-color: #d8ffb2; color: #408000; }
+.tag-accessibility { background-color: #b2ffc5; color: #008020; }
+.tag-design-direction { background-color: #B2FFFF; color: #008080; }
+.tag-information-architecture { background-color: #D8B2FF; color: #400080; }
+.tag-ui-audit { background-color: #F5B2FF; color: #6F0080; }
+.tag-layout-system { background-color: #FFB2ED; color: #800062; }
+.tag-layout-patterns { background-color: #FFB2D1; color: #800033; }
+
+/* Footer */
+.mini-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--gray-90);
+  padding-top: 16px;
+}
+
+.mini-card-footer {
+  transition: border-color 0.4s ease;
+}
+
+.mini-card:hover .mini-card-footer {
+  border-top-color: var(--gray-70); /* Darkens the line on hover for focus */
+}
+
+.view-text {
+  color: var(--gray-50);
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+}
+
+.mini-arrow-circle {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 0.32px solid var(--gray-50);
+  box-sizing: border-box; 
+  border-radius: 24px;
+  flex-shrink: 0;
+}
+
+.mini-arrow-circle {
+  transition: all 0.4s cubic-bezier(0.1, 0, 0, 1);
+  background-color: transparent;
+}
+
+.mini-card:hover .mini-arrow-circle {
+  /* Instead of just shifting, let's fill the circle */
+  background-color: var(--gray-20);
+  border-color: var(--gray-20);
+  transform: rotate(-45deg); /* Points the arrow to the top-right corner */
+}
+
+.mini-arrow-icon {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-card:hover .mini-arrow-icon {
+  /* If your icon is an SVG, this makes it white against the new dark background */
+  filter: brightness(0) invert(1); 
+}
+
+/* Section Container */
+.contact-section {
+  width: 100%;             /* Stretches to the absolute edges of the screen */
+  background-color: var(--main-primary-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: auto;          
+}
+
+.subway-up-arrow-wrapper-contact {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  border: 1.4px solid var(--gray-40);
+  box-sizing: border-box; 
+  border-radius: 35px;
+  flex-shrink: 0;
+}
+
+.subway-up-arrow-contact {
+  width: 32px;
+  height: 32px;
+}
+
+/* 2. Centered Content with 96px Margins */
+.contact-inner {
+  width: 100%;
+  max-width: 1440px;      /* Matches your Figma frame */
+  margin: 0 auto;         /* Centers the content box */
+  padding: 56px 96px 0;     /* Top/Bottom 80px, Left/Right 96px */
+  box-sizing: border-box; /* Keeps the 1440px width exact */
+}
+
+/* Title & Description */
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  margin-top: 56px;
+  margin-bottom: 120px;
+}
+
+.contact-main-title {
+  font-family: var(--h-2-font-family);
+  font-weight: var(--h-2-font-weight);
+  font-size: var(--h-2-font-size);
+  text-align: center;
+  letter-spacing: var(--h-2-letter-spacing);
+  line-height: 232px;
+  margin: 0;
+}
+
+.text-white {
+  color: var(--gray-90);
+}
+.contact-section .text-green {
+  color: var(--accent-50);
+}
+
+.contact-description {
+  font-family: var(--h-6-font-family);
+  font-size: var(--h-6-font-size);
+  letter-spacing: var(--h-6-letter-spacing);
+  font-weight: var(--h-6-font-weight);
+  font-style: var(--h-6-font-style);
+  line-height: var(--h-6-line-height);
+  color: var(--gray-60);
+  text-align: center;
+}
+
+/* Email & LinkedIn Rows */
+.contact-links-list {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  width: 100%; 
+  max-width: 1248px;
+  margin-bottom: 72px;
+}
+
+.email-frame {
+  justify-content: space-between;
+  padding: 48px 0px;
+  width: 100%;
+  border-top: 1px solid var(--gray-30);
+  border-bottom: 1px solid var(--gray-30);
+  flex-direction: row;
+}
+
+.linkedin-frame {
+  justify-content: space-between;
+  padding: 48px 0px;
+  width: 100%;
+  border-bottom: 1px solid var(--gray-30);
+  flex-direction: row;
+}
+
+.contact-link-item {
+  display: flex;
+  flex-direction: row;      /* Puts Text Stack and Arrow on one line */
+  justify-content: space-between; /* Pushes Text to left, Arrow to right */
+  align-items: center;      /* Vertically centers them */
+  text-decoration: none;
+  width: 100%;
+}
+
+.link-text-stack-email {
+  display: flex;
+  gap: 160px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link-text-stack-linkedin {
+  display: flex;
+  gap: 133px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link-label {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  letter-spacing: var(--body-letter-spacing);
+  font-weight: var(--body-font-weight);
+  font-style: var(--body-font-style);
+  line-height: var(--body-line-height);
+  color: var(--gray-50);
+}
+
+.link-value {
+  font-family: var(--h-5-font-family);
+  font-size: var(--h-5-font-size);
+  letter-spacing: var(--h-5-letter-spacing);
+  font-weight: 700;
+  font-style: var(--h-5-font-style);
+  line-height: var(--h-5-line-height);
+  color: var(--accent-50);
+}
+
+.contact-section .link-value:hover {
+  filter: brightness(1.5); 
+}
+
+.social-icons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  margin-bottom: 72px;
+}
+
+.magnetic-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Soft snap back */
+    will-change: transform;
+}
+
+/* While the mouse is moving inside, we want instant tracking */
+.magnetic-item:hover {
+    transition: transform 0.1s linear;
+}
+
+/* Prevents the icon inside from "flickering" or stealing the mouse event */
+.magnetic-item img {
+    pointer-events: none;
+}
+
+/* Social Icon Container */
+.social-icon-box {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 50%; /* Keeps it perfectly circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.social-icon-box:hover {
+  background-color: rgba(151, 222, 155, 0.1); /* Very faint green "halo" */
+  transform: scale(1.1); /* Grows slightly */
+}
+
+/* If your icons are SVGs, change the path color on hover */
+.social-icon-box:hover svg path {
+  fill: var(--main-accent-20);
+  transition: fill 0.3s ease;
+}
+
+.social-icon-box {
+  width: 70px;
+  height: 70px;
+  padding: 19.6px 15.4px;
+  aspect-ratio: 1;
+}
+
+/* --- UPDATED CONTACT INTERACTIONS --- */
+
+/* 1. The Row Frame (Email/LinkedIn) */
+.email-frame, .linkedin-frame {
+  transition: background-color 0.4s var(--premium-curve), 
+              padding-left 0.4s var(--premium-curve);
+  border-top: 1px solid var(--gray-30);
+  border-bottom: 1px solid var(--gray-30);
+}
+
+.email-frame:hover, .linkedin-frame:hover {
+  background-color: rgba(151, 222, 155, 0.03); /* Extremely faint green tint */
+}
+
+/* 2. The Arrow Wrapper - Scaling & Rotating */
+.subway-up-arrow-wrapper-contact {
+  transition: all 0.5s var(--premium-curve);
+  background-color: transparent;
+}
+
+.contact-link-item:hover .subway-up-arrow-wrapper-contact {
+  background-color: var(--accent-50); /* Fills circle with your green */
+  border-color: var(--accent-50);
+  transform: scale(1.1) rotate(45deg); /* Grows and points top-right */
+}
+
+/* 3. The Arrow Icon - Color flip */
+.subway-up-arrow-contact {
+  transition: filter 0.3s ease;
+}
+
+.contact-link-item:hover .subway-up-arrow-contact {
+  filter: brightness(0) invert(1); /* Turns icon white against green bg */
+}
+
+/* 4. The Link Value (Email/URL) */
+.link-value {
+  transition: color 0.4s ease, letter-spacing 0.4s var(--premium-curve);
+}
+
+.contact-link-item:hover .link-value {
+  color: var(--accent-50);
+}
+
+.main-footer {
+  width: 100%;
+  background-color: var(--gray-93);
+}
+
+.footer-content {
+  display: flex;
+  padding: 0 120px 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo-group {
+  position: relative;
+  width: 30px;
+  height: 15px;
+  display: flex;
+}
+
+.main-footer .r,
+.main-footer .b,
+.main-footer .j {
+  top: -3px;
+  height: 43px;
+  margin-right: -19px;
+}
+
+.footer-content .copyright-text {
+  font-size: var(--small-font-size);
+  font-family: var(--small-font-family);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+  color: var(--gray-30);
+}
+
+
+/* Responsive – keep vertical, adjust spacing */
+@media (max-width: 1024px) {
+  .case-item {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .case-image-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .case-study-section-title {
+    text-align: center;
+  }
+}
+
+/* Responsive – stack everything on smaller screens */
+@media (max-width: 1100px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .skills-tools-experience {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(4.5rem, 12vw, 8rem);
+  }
+
+  .journey {
+    text-align: center;
+    max-width: 80ch;
+    margin: 0 auto;
+  }
+
+  .column-title {
+    text-align: center;
+  }
+
+  .skill-list {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 4rem 6vw 6rem;
+  }
+
+  .section-title {
+    font-size: clamp(3.5rem, 11vw, 6rem);
+    line-height: 0.9;
+  }
+
+  .bio {
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+
+  .skills-tools-experience {
+    gap: 3.5rem;
+  }
+}
+
+/* Force Be Vietnam Pro everywhere in About (safety) */
+.about-section,
+.about-section *,
+.about-section p,
+.about-section span,
+.about-section li,
+.about-section div {
+  font-family: var(--body-font-family) !important;
+}
+
+/* Body base font */
+body {
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+  color: var(--gray-30);
+}
+
+@media (max-width: 768px) {
+
+  /* --- Hamburger Icon Styles --- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001; /* Above the navbar drawer */
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--gray-10);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: left center;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* --- Mobile Navbar Layout --- */
+.landing-page .navbar {
+  position: absolute;
+  top: 100%; /* Sits right under the header */
+  left: 0;
+  width: 100%;
+  background: white;
+  flex-direction: column;
+  padding: 40px 0;
+  gap: 30px;
+  border-bottom: 1px solid var(--gray-90);
+  
+  /* Hidden state */
+  display: none; 
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* --- The "Magic" Toggle --- */
+#menu-toggle:checked ~ .navbar {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Optional: Animate Hamburger to an 'X' --- */
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Hide hamburger on Desktop */
+@media (min-width: 769px) {
+  .hamburger { display: none; }
+}
+  /* 1. Reset the Landing Page Height */
+  .landing-page {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px; /* Space for the fixed header */
+  }
+
+  /* 2. Stack the Hero Section */
+  .landing-page .frame {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    top: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .landing-page .heading {
+    font-size: 56px; /* Scaled down from 104px */
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .landing-page .text-wrapper {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .landing-page .subtext {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* 3. Adjust the Profile Image */
+  .landing-page .right-side {
+    position: relative;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .landing-page .img {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  /* 4. Hide Decorative Lines on Mobile */
+  /* These often cause horizontal scrolling (bugs) on small screens */
+  .landing-page .line-top,
+  .landing-page .line-bottom,
+  .landing-page .line-right,
+  .landing-page .line-left,
+  .decor-line,
+  .case-study-line {
+    display: none;
+  }
+
+  /* 5. Clean up the Header for Mobile */
+  .landing-page .header {
+    padding: 16px 24px;
+  }
+
+  .landing-page .navbar {
+    gap: 15px; /* Tighter spacing for links */
+  }
+
+  .landing-page .text-wrapper-6 {
+    font-size: 14px;
+  }
+}
+
+/* 1. Define the entry animation */
+/* 1. Define the Animations */
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px); /* Short distance for a cleaner look */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 2. Apply them using the Scroll Timeline */
+.slide-left {
+  view-timeline-name: --reveal;
+  view-timeline-axis: block;
+  animation: slide-from-left linear both;
+  animation-timeline: --reveal;
+  animation-range: entry 10% cover 30%;
+}
+
+.slide-right {
+  view-timeline-name: --reveal;
+  view-timeline-axis: block;
+  animation: slide-from-right linear both;
+  animation-timeline: --reveal;
+  animation-range: entry 10% cover 30%;
+}
+
+/* 2. Apply it to your main sections (About, Case Studies, etc.) */
+.landing-page > section, 
+.mini-card, 
+.skills-tools-experience {
+  view-timeline-name: --section-reveal;
+  view-timeline-axis: block;
+
+  /* This tells the animation to play only when entering the viewport */
+  animation: reveal-on-scroll linear both;
+  animation-timeline: --section-reveal;
+  animation-range: entry 10% cover 30%; /* Starts appearing at 10% in, finished by 30% */
+}
+
+#scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Thin and elegant */
+  background: transparent;
+  z-index: 2000; /* Higher than the header */
+}
+
+#scroll-progress-bar {
+  height: 100%;
+  background-color: var(--main-accent-20); /* Your signature green */
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gray-90);
+  border: 1px solid var(--gray-80);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 99;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--main-accent-20);
+  border-color: var(--main-accent-20);
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* --- MOBILE REFINEMENTS (Below 768px) --- */
+@media (max-width: 768px) {
+  .contact-inner {
+    padding: 40px 24px; /* Reduced side margins for mobile */
+  }
+
+  .contact-main-title {
+    font-size: 64px; /* Scaled down from the massive desktop size */
+    line-height: 1.1;
+  }
+
+  /* Stack the Email/LinkedIn labels on top of the values */
+  .link-text-stack-email, 
+  .link-text-stack-linkedin {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px; /* Tight gap for a clean "Label/Value" look */
+  }
+
+  .link-value {
+    font-size: 18px; /* Smaller font to prevent horizontal scrolling */
+    word-break: break-all; /* Safety measure for very small screens */
+  }
+
+  .email-frame, .linkedin-frame {
+    padding: 32px 0; /* Slightly tighter padding for mobile */
+  }
+
+  /* Make the arrow circle a bit smaller for thumb-tapping */
+  .subway-up-arrow-wrapper-contact {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide the sliding line on mobile, use a different style */
+  #nav-indicator { display: none; }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    width: 80%;
+    height: 100vh;
+    background: var(--main-primary-10); /* Dark mode bg */
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s var(--premium-curve);
+    z-index: 999;
+  }
+
+  /* When checkbox is checked (hamburger clicked) */
+  #menu-toggle:checked ~ .navbar {
+    right: 0;
+  }
+
+  .text-wrapper-6 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+}
+

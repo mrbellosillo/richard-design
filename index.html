@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="landing-page" id="landing-page">
+      <div class="right-side reveal">
+        <img class="img" src="images/profile pic.jpg" alt="Profile photo" />
+        <svg 
+          class="line-top"
+          viewBox="0 0 600 4"
+          width="600"
+          height="4"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line 
+            x1="0" y1="2" 
+            x2="600" y2="2" 
+            stroke="var(--gray-40)" 
+            stroke-width="4"
+          />
+        </svg>
+
+  <!-- 2. Bottom edge line: horizontal, x:39, y:575, width:663px -->
+        <svg 
+          class="line-bottom"
+          viewBox="0 0 500 4"
+          width="500"
+          height="4"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line 
+            x1="0" y1="2" 
+            x2="500" y2="2" 
+            stroke="var(--gray-40)" 
+            stroke-width="4"
+          />
+        </svg>
+
+  <!-- 3. Right edge line: vertical, x:491.88, y:0, height:613px -->
+        <svg 
+          class="line-right"
+          viewBox="0 0 4 613"
+          width="4"
+          height="613"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line 
+            x1="2" y1="0" 
+            x2="2" y2="613" 
+            stroke="var(--gray-40)" 
+            stroke-width="4"
+          />
+        </svg>
+
+  <!-- 4. Left edge line: vertical, x:132.47, y:0, height:676.93px -->
+        <svg 
+          class="line-left"
+          viewBox="0 0 4 677"
+          width="4"
+          height="677"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line 
+            x1="2" y1="0" 
+            x2="2" y2="677" 
+            stroke="var(--gray-40)" 
+            stroke-width="4"
+          />
+        </svg>
+      </div>
+      <div class="frame">
+        <div class="left-side reveal">
+          <div class="div">
+            <div class="frame-2">
+              <div class="heading">Richard Bellosillo Jr.</div>
+              <div class="text-wrapper">UI/UX Designer</div>
+            </div>
+            <p class="subtext">Crafting clear, intuitive interfaces built with structure and purpose.</p>
+          </div>
+          <div class="CT-as">
+            <a href="#case-studies" class="div-wrapper ripple-btn tilt-btn" style="text-decoration: none; display: block;">
+              <div class="text-wrapper-2">View Case Studies</div>
+            </a>
+
+            <a href="#contact" class="frame-3 ripple-btn tilt-btn" style="text-decoration: none; display: block;">
+              <div class="text-wrapper-3">Let’s Connect</div>
+            </a>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="frame-4">
+            <div class="text-wrapper-4 stat-number" data-target="1">0</div>
+            <div class="text-wrapper-5">YEAR <br />DESIGNING</div>
+          </div>
+          
+          <div class="frame-5">
+            <div class="text-wrapper-4 stat-number" data-target="4">0</div>
+            <div class="text-wrapper-5">CASE <br />STUDIES</div>
+          </div>
+          
+          <div class="frame-5">
+            <div class="text-wrapper-4 stat-number" data-target="8">0</div>
+            <div class="text-wrapper-5">MINI PROJECTS</div>
+          </div>
+        </div>
+      </div>
+      <div id="scroll-progress-container">
+      <div id="scroll-progress-bar"></div>
+    </div>
+      <div class="header">
+        <div class="header-2">
+          <div class="frame-6">
+            <img class="vector" src="images/j.png" />
+            <img class="vector-2" src="images/b.png" />
+            <img class="vector-3" src="images/r.png" />
+          </div>
+
+          <input type="checkbox" id="menu-toggle" style="display: none;">
+
+          <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <div class="navbar">
+            <div id="nav-indicator"></div>
+            <a href="#landing-page" class="text-wrapper-6">Home</a>
+            
+            <a href="#about" class="text-wrapper-6">About</a>
+            
+            <a href="#case-studies" class="text-wrapper-6">Case Studies</a>
+            
+            <a href="#mini-projects" class="text-wrapper-6">Mini Projects</a>
+            
+            <a href="#contact" class="frame-7" style="text-decoration: none;">
+              <div class="text-wrapper-7">Get in Touch</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <section class="about-section" id="about">
+  <!-- Decorative lines -->
+      <svg 
+        class="decor-line horizontal"
+        viewBox="0 0 784 4"
+        width="784"
+        height="4"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="0" y1="2" 
+          x2="784" y2="2" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+
+      <svg 
+        class="decor-line vertical"
+        viewBox="0 0 4 863"
+        width="4"
+        height="863"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="2" y1="0" 
+          x2="2" y2="863" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+
+  <div class="content-wrapper">
+    <h2 class="section-title">
+      ABOUT <span class="highlight">ME</span>
+    </h2>
+
+    <div class="bio">
+      <p>
+        Hi, I'm <strong>Richard</strong> – a <strong>UI/UX designer</strong> with a background in Computer Engineering Technology. 
+        While studying programming, I realized I was more drawn to <strong>designing interfaces</strong> than just making code work. 
+        I naturally focused on structure, layout, and visual clarity – even before I knew it was called UI/UX.
+        During my OJT in 2025, that interest became a commitment. I redesigned systems in <strong>Figma</strong>, 
+        recreated landing pages, and constantly refined my skills outside of school. 
+        Now, as a <strong>Designer OJT</strong> in a startup, I contribute to <strong>real projects</strong> and <strong>MVPs</strong>, 
+        applying structured thinking and intentional design to every interface I touch.
+      </p>
+
+      <p>
+        My approach is simple: <strong>understand the problem</strong>, break it down, structure it clearly, 
+        and <strong>design with empathy</strong>. I focus on clarity first, then refine the visuals to support 
+        <strong>usability</strong> – not distract from it. I specialize in creating thoughtful, structured interfaces that balance usability and visual clarity, 
+        turning <strong>complex ideas</strong> into experiences that feel intuitive and intentional.
+      </p>
+
+      <p>
+        When I’m not in Figma, you can find me dancing, traveling, or spending time with animals. I believe the empathy required to care for life—human or otherwise—is the same empathy required to build products that truly serve people. I am currently open to <strong>full-time opportunities</strong> or <strong>freelance collaborations</strong> where I can contribute to teams that value thoughtful, purposeful design.
+      </p>
+    </div>
+
+    <!-- Skills / Tools / Experience – three columns -->
+    <div class="skills-tools-experience">
+      <!-- SKILLS -->
+      <div class="column">
+        <h3 class="column-title">SKILLS</h3>
+        <ul class="skill-list">
+          <li>
+            <div class="icon-frame">
+              <img src="icons/wireframing.svg" alt="Wireframing icon" />
+            </div>
+            Wireframing
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/prototyping.svg" alt="Prototyping icon" />
+            </div>
+            Prototyping
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/user research.svg" alt="User Research icon" />
+            </div>
+            User Research
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/design systems.svg" alt="Design Systems icon" />
+            </div>
+            Design Systems
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/color theory.svg" alt="Color Theory icon" />
+            </div>
+            Color Theory
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/user flow.svg" alt="User Flow icon" />
+            </div>
+            User Flow
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/html.svg" alt="HTML icon" />
+            </div>
+            HTML
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/css.svg" alt="CSS icon" />
+            </div>
+            CSS
+          </li>
+        </ul>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="column">
+        <h3 class="column-title">TOOLS</h3>
+        <ul class="skill-list">
+          <li>
+            <div class="icon-frame">
+              <img src="icons/figma.svg" alt="Figma icon" />
+            </div>
+            Figma
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/canva.svg" alt="Canva icon" />
+            </div>
+            Canva
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/github.svg" alt="GitHub icon" />
+            </div>GitHub
+          </li>
+          <li>
+            <div class="icon-frame">
+              <img src="icons/vs code.svg" alt="VS Code icon" />
+            </div>VS Code
+          </li>
+        </ul>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="column">
+        <h3 class="column-title">EXPERIENCE</h3>
+        <div class="experience-item">
+          <div class="role-date-wrapper">
+            <div class="role">UI/UX Design Intern</div>
+            <div class="date">Nov 2025 – Present</div>
+          </div>
+        <div class="company">HOP Transportation Services</div>
+        </div>
+        <div class="experience-item">
+          <div class="role-date-wrapper">
+            <div class="role">UI Design Intern</div>
+            <div class="date">Jun 2025 - Aug 2025</div>
+          </div>
+        <div class="company">Provincial Government of Negros Occidental - ICTD</div>
+        </div>
+      </div>
+    </div>
+    <section class="case-studies-section" id="case-studies">
+  <!-- Decorative lines -->
+      <svg 
+        class="case-study-line horizontal"
+        viewBox="0 0 1046 4"
+        width="1046"
+        height="4"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="0" y1="2" 
+          x2="1046" y2="2" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+
+      <svg 
+        class="case-study-line vertical"
+        viewBox="0 0 4 651"
+        width="4"
+        height="651"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="2" y1="0" 
+          x2="2" y2="651" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+      <div class="content-wrapper">
+        <h2 class="case-study-section-title">
+          CASE <span class="highlight">STUDIES</span>
+        </h2>
+      <div class="case-list">
+      <!-- Case 01 -->
+      <article class="first-case-study reveal" id="firstcs">
+  <!-- Anima's "frame": Holds Number, Text, and Image -->
+  <a href="casestudy4.html" class="case-content-wrapper" style="text-decoration: none; cursor: pointer;">
+    
+    <!-- Anima's "case-study": Groups Number and Text -->
+    <div class="case-info-group">
+      <div class="case-number">01</div>
+      
+      <!-- Anima's "div": The vertical text stack -->
+      <div class="case-text-stack">
+        <!-- Frame 2: Category + Year -->
+        <div class="case-meta">
+          <div class="category-tag-4"><div class="soft-app-4">MOBILE APP</div></div>
+          <div class="case-date">2026</div>
+        </div>
+
+        <!-- Frame 3 & 4: Title + Description + Roles -->
+        <div class="case-body">
+          <h3 class="case-title">Aura Finance: A Visual Savings Experience</h3>
+          <div class="case-description-area">
+            <p class="p">
+              Designed a premium mobile savings app that redefines the personal finance experience through atmospheric UI and emotional feedback.
+            </p>
+            <!-- Frame 5: Roles/Tools -->
+            <div class="role-tags">
+              <div class="tag-frame"><div class="role-tools">UI/UX Designer</div></div>
+              <div class="tag-frame"><div class="role-tools">Figma</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anima's Image: Sits next to the text group -->
+    <div class="case-image-wrap">
+      <img class="daily-QR-code-page" src="images/Dashboard.png" alt="Project Thumbnail" />
+    </div>
+  </a>
+
+  <!-- Anima's Arrow: Sits at the very end of the row -->
+  <a href="casestudy4.html" class="subway-up-arrow-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="subway-up-arrow">
+      <img class="vector" src="icons/arrow.svg" alt="arrow" />
+    </div>
+  </a>
+</article>
+
+<article class="first-case-study reveal" id="secondcs">
+  <!-- Anima's "frame": Holds Number, Text, and Image -->
+  <a href="casestudy1.html" class="case-content-wrapper" style="text-decoration: none; cursor: pointer;">
+    
+    <!-- Anima's "case-study": Groups Number and Text -->
+    <div class="case-info-group">
+      <div class="case-number">02</div>
+      
+      <!-- Anima's "div": The vertical text stack -->
+      <div class="case-text-stack">
+        <!-- Frame 2: Category + Year -->
+        <div class="case-meta">
+          <div class="category-tag"><div class="soft-app">WEB SYSTEM</div></div>
+          <div class="case-date">2026</div>
+        </div>
+
+        <!-- Frame 3 & 4: Title + Description + Roles -->
+        <div class="case-body">
+          <h3 class="case-title">QR-Based Attendance Management System</h3>
+          <div class="case-description-area">
+            <p class="p">
+              Designed the admin-side interface of a QR-based attendance system that replaces manual paper time tracking.
+            </p>
+            <!-- Frame 5: Roles/Tools -->
+            <div class="role-tags">
+              <div class="tag-frame"><div class="role-tools">UI/UX Designer</div></div>
+              <div class="tag-frame"><div class="role-tools">Figma</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anima's Image: Sits next to the text group -->
+    <div class="case-image-wrap">
+      <img class="daily-QR-code-page" src="images/Daily QR Code page.png" alt="Project Thumbnail" />
+    </div>
+  </a>
+
+  <!-- Anima's Arrow: Sits at the very end of the row -->
+  <a href="casestudy1.html" class="subway-up-arrow-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="subway-up-arrow">
+      <img class="vector" src="icons/arrow.svg" alt="arrow" />
+    </div>
+  </a>
+</article>
+
+<article class="first-case-study reveal" id="thirdcs">
+  <a href="casestudy2.html" class="case-content-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="case-info-group">
+      <div class="case-number">03</div> <!-- Change to 02 -->
+      
+      <div class="case-text-stack">
+        <div class="case-meta">
+          <div class="category-tag-2"><div class="soft-app-2">MOBILE APP</div></div> <!-- Update Category -->
+          <div class="case-date">2026</div>
+        </div>
+
+        <div class="case-body">
+          <h3 class="case-title">Voucher & Promo System</h3> <!-- Update Title -->
+          <div class="case-description-area">
+            <p class="p">
+              Designed the voucher, promo, and offer card experience for a ride-hailing application.
+            </p>
+            <div class="role-tags">
+              <div class="tag-frame"><div class="role-tools">UI/UX Designer</div></div>
+              <div class="tag-frame"><div class="role-tools">Figma</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Image Source -->
+    <div class="case-image-wrap">
+      <img class="daily-QR-code-page" src="images/Cards.png" alt="Project Thumbnail" />
+    </div>
+  </a>
+
+  <a href="casestudy2.html" class="subway-up-arrow-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="subway-up-arrow">
+      <img class="vector" src="icons/arrow.svg" alt="arrow" />
+    </div>
+  </a>
+</article>
+<article class="first-case-study reveal" id="fourthcs">
+  <a href="casestudy3.html" class="case-content-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="case-info-group">
+      <div class="case-number">04</div> <!-- Change to 02 -->
+      
+      <div class="case-text-stack">
+        <div class="case-meta">
+          <div class="category-tag-3"><div class="soft-app-3">WEB EXPERIENCE</div></div> <!-- Update Category -->
+          <div class="case-date">2026</div>
+        </div>
+
+        <div class="case-body">
+          <h3 class="case-title">Driver Application Experience</h3> <!-- Update Title -->
+          <div class="case-description-area">
+            <p class="p">
+              Designed the “Apply as Driver” page for a transportation platform, focusing on simplifying the application process.
+            </p>
+            <div class="role-tags">
+              <div class="tag-frame"><div class="role-tools">UI/UX Designer</div></div>
+              <div class="tag-frame"><div class="role-tools">Figma</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Update Image Source -->
+    <div class="case-image-wrap">
+      <img class="daily-QR-code-page" src="images/_Apply as Driver_ page.png" alt="Project Thumbnail" />
+    </div>
+  </a>
+
+  <a href="casestudy3.html" class="subway-up-arrow-wrapper" style="text-decoration: none; cursor: pointer;">
+    <div class="subway-up-arrow">
+      <img class="vector" src="icons/arrow.svg" alt="arrow" />
+    </div>
+  </a>
+</article>
+    </div>
+  </div>
+    </section>
+    <section class="mini-projects-section" id="mini-projects">
+  <!-- Decorative SVG Lines (Matching Grok's About Logic) -->
+      <svg 
+        class="decor-line vertical-mini"
+        viewBox="0 0 4 782"
+        width="4"
+        height="782"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="2" y1="0" 
+          x2="2" y2="782" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+
+  <!-- Header Section -->
+  <div class="mini-header">
+    <h2 class="mini-main-title">
+      <span class="text-black">MINI</span> <br /> 
+      <span class="text-green">PROJECTS</span>
+    </h2>
+    <p class="mini-intro-text">
+      Focused design exercises from OJT training - exploring color theory, typography, accessibility, layout, and more.
+    </p>
+      <svg 
+        class="decor-line horizontal-mini"
+        viewBox="0 0 1296 4"
+        width="1296"
+        height="4"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line 
+          x1="0" y1="2" 
+          x2="1296" y2="2" 
+          stroke="var(--gray-40)" 
+          stroke-width="4"
+        />
+      </svg>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="mini-cards-grid" id="grid">
+    
+    <!-- Card 1: Color Theory -->
+    <article class="mini-card reveal delay-1" id="first">
+      <img src="images/Login Screen.png" class="mini-card-img" alt="Color Theory">
+      <a href="miniproject1.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-color-theory">COLOR THEORY</div>
+        <h4 class="mini-project-name">Split Complementary Login UI</h4>
+        <p class="mini-project-desc">
+          Designed a login screen using a split complementary color scheme, focusing on color harmony, contrast, and typography hierarchy. Following feedback on clarity and sizing, the design was revised to achieve a perfect final score. The glassmorphism approach, featuring background blur, transparency, and a structured logo, defined the visual composition.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- Card 2: Typography -->
+    <article class="mini-card reveal delay-2" id="second">
+      <img src="images/Web.png" class="mini-card-img" alt="Typography">
+      <a href="miniproject2.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-typography">TYPOGRAPHY</div>
+        <h4 class="mini-project-name">Typography-Only Homepage Hero</h4>
+        <p class="mini-project-desc">
+          Created a homepage hero section solely utilizing typography, focusing on hierarchy, emphasis, and visual balance with one typeface in various weights and sizes. The design featured an H1 headline, supporting subtext, and a primary CTA button, all text-based. The design was approved on the first submission without any revisions.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- Card 3: Accessibility -->
+    <article class="mini-card reveal delay-3" id="third">
+      <img src="images/Redesigned Screen of TagTeamSigns (revised).png" class="mini-card-img" alt="Accessibility">
+      <a href="miniproject3.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-accessibility">ACCESSIBILITY</div>
+        <h4 class="mini-project-name">Color-Blind Friendly UI Redesign</h4>
+        <p class="mini-project-desc">
+          Redesigned a UI screen with poor color choices to enhance accessibility, specifically for users with color-vision deficiencies. This included avoiding red/green conflicts, adding icons and text labels, and using an analogous color palette while preserving brand colors. The redesign achieved a perfect score of 100/100 on the initial submission.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="mini-card reveal delay-1" id="fourth">
+      <img src="images/UI components.jpg" class="mini-card-img" alt="Accessibility">
+      <a href="miniproject4.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-design-direction">DESIGN DIRECTION</div>
+        <h4 class="mini-project-name">Mood Board + UI Theme</h4>
+        <p class="mini-project-desc">
+          Established a design direction for a nature-inspired meditation app featuring a monochromatic green color scheme. Deliverables included a Canva mood board, color palette, typography board with Lato as the primary typeface, and a Figma mockup of UI components. The overall aesthetic was peaceful and zen, receiving a perfect score of 100/100.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="mini-card reveal delay-2" id="fifth">
+      <img src="images/IA.jpg" class="mini-card-img" alt="Accessibility">
+      <a href="miniproject5.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-information-architecture">INFORMATION ARCHITECTURE</div>
+        <h4 class="mini-project-name">Information Architecture & Navigation</h4>
+        <p class="mini-project-desc">
+          Organized the Settings section of InboxPro using information architecture principles like findability, user-centered design, and accessibility, categorizing it into five areas: Account Profile, Security & Privacy, Notifications, General Preferences, and About App. The structure included tabs, cards, and accordions, with multiple screens for each tab and distinct Light and Dark Mode visual identities, achieving a perfect score of 100/100 in design.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="mini-card reveal delay-3" id="sixth">
+      <img src="images/audit.jpg" class="mini-card-img" alt="Accessibility">
+      <a href="miniproject6.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-ui-audit">UI AUDIT</div>
+        <h4 class="mini-project-name">UI Redesign & Principles Audit</h4>
+        <p class="mini-project-desc">
+          Selected a design with significant flaws, auditing three screens against UI/UX principles. Documented violations and delivered a high-fidelity redesign with justifications. Key improvements: dark mode surface treatment (dark blue), transparent login card elements, and a harmonious color palette. Scored 100/100.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="mini-card reveal delay-1" id="seventh">
+      <img src="images/For grid system (Desktop).png" class="mini-card-img-task-7" alt="Accessibility">
+      <a href="miniprojects7.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-layout-system">LAYOUT SYSTEM</div>
+        <h4 class="mini-project-name">Full Dashboard Grid Layout</h4>
+        <p class="mini-project-desc">
+          Designed a full-length single-page website dashboard utilizing a 12-column grid system with consistent gutters. Delivered high-fidelity mockups for both Desktop and Mobile, showcasing responsive design. The design followed principles and feedback from previous OJT sessions, receiving commendation for grid alignment and mobile hero section adaptation.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="mini-card reveal delay-2" id="eighth">
+      <img src="images/patterns.jpg" class="mini-card-img" alt="Accessibility">
+      <a href="miniproject8.html" class="mini-card-content" style="text-decoration: none; cursor: pointer;">
+        <div class="mini-tag tag-layout-patterns">LAYOUT PATTERNS</div>
+        <h4 class="mini-project-name">F-Pattern & Z-Pattern Layouts</h4>
+        <p class="mini-project-desc">
+          Four screens were designed utilizing F-pattern layouts for the first set and Z-pattern for the second. Both sets followed the mood board theme, incorporating established color, typography, and grid systems. The F-pattern was accepted on the initial submission, while the Z-pattern needed one revision for standard alignment, which was successfully achieved.
+        </p>
+        <div class="mini-card-footer">
+          <span class="view-text">View Project</span>
+          <div class="mini-arrow-circle">
+            <img src="icons/arrow.svg" class="mini-arrow-icon" alt="arrow">
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
+  </div>
+</section>
+<section class="contact-section" id="contact">
+  <!-- This inner div keeps content centered and follows the 96px margin -->
+  <div class="contact-inner">
+    <div class="contact-container">
+      <div class="contact-info-stack">
+        
+        <!-- Header: Title and Description -->
+        <div class="contact-header">
+          <h2 class="contact-main-title">
+            <span class="text-white">GET IN</span> <br /> 
+            <span class="text-green">TOUCH</span>
+          </h2>
+          <p class="contact-description">
+            Open to UI/UX design opportunities, freelance projects, and design collaborations. 
+            Let's build something meaningful together.
+          </p>
+        </div>
+
+        <!-- Main Contact Links (Email/LinkedIn) -->
+        <div class="contact-links-list">
+          <div class = email-frame>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rbellosillojr@gmail.com" 
+              class="contact-link-item" 
+              target="_blank" 
+              rel="noopener noreferrer">
+            <div class="link-text-stack-email">
+              <span class="link-label">EMAIL</span>
+              <span class="link-value">rbellosillojr@gmail.com</span>
+            </div>
+            <div class="subway-up-arrow-wrapper-contact">
+              <img src="icons/contact arrow.svg" alt="arrow" class="subway-up-arrow-contact">
+            </div>
+          </a>
+          </div>
+
+          <div class = linkedin-frame>
+          <a href="https://www.linkedin.com/in/richard-jr-bellosillo-30a23a2a5" 
+              class="contact-link-item" 
+              target="_blank" 
+              rel="noopener noreferrer">
+            <div class="link-text-stack-linkedin">
+              <span class="link-label">LINKEDIN</span>
+              <span class="link-value">www.linkedin.com/in/mrbellosillo</span>
+            </div>
+            <div class="subway-up-arrow-wrapper-contact">
+              <img src="icons/contact arrow.svg" alt="arrow" class="subway-up-arrow-contact">
+            </div>
+          </a>
+          </div>
+        </div>
+
+        <!-- Social Icons Row (GitHub, Threads, etc.) -->
+        <div class="social-icons-row">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rbellosillojr@gmail.com" target="_blank" class="social-icon-box magnetic-item" rel="noopener noreferrer">
+            <img src="icons/contact email.svg" alt="Email" />
+          </a>
+          <a href="https://www.linkedin.com/in/richard-jr-bellosillo-30a23a2a5" target="_blank" class="social-icon-box magnetic-item" rel="noopener noreferrer">
+            <img src="icons/contact linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/mrbellosillo" target="_blank" class="social-icon-box magnetic-item" rel="noopener noreferrer">
+            <img src="icons/contact github.svg" alt="Github" />
+          </a>
+          <a href="https://www.threads.com/@mr.bellosillo" target="_blank" class="social-icon-box magnetic-item" rel="noopener noreferrer">
+            <img src="icons/contact threads.svg" alt="Threads" />
+          </a>
+        </div>
+      </div>
+</section>
+<section>
+  <!-- The Footer (Full Width Gray Bar) -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo-group">
+        <img class="r" src="images/r.png" >
+        <img class="b" src="images/b.png" >
+        <img class="j" src="images/j.png" >
+      </div>
+      <p class="copyright-text">Richard Bellosillo Jr. • UI/UX Designer • 2026</p>
+    </div>
+  </footer>
+</section>
+<button id="back-to-top" class="back-to-top">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+<script src="script.js"></script>
+  </body>
+</html>

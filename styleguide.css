@@ -1,0 +1,94 @@
+:root {
+  --main-primary-10: rgba(31, 25, 23, 1);
+  --main-secondary-80: rgba(189, 191, 190, 1);
+  --main-accent-20: rgba(28, 89, 32, 1);
+  --bg-primary-95: rgba(244, 241, 240, 1);
+  --primary-30: rgba(91, 73, 67, 1);
+  --light-text-98: rgba(250, 249, 249, 1);
+  --secondary-40: rgba(88, 91, 89, 1);
+  --primary-50: rgba(149, 121, 112, 1);
+  --primary-40: rgba(120, 97, 89, 1);
+  --accent-50: rgba(73, 197, 81, 1);
+  --periwinkle-85: rgba(178, 178, 255, 1);
+  --navy-25: rgba(0, 0, 229, 1);
+  --navy-15: rgba(0, 0, 77, 1);
+  --gray-10: rgba(27, 25, 24, 1);
+  --gray-20: rgba(54, 50, 48, 1);
+  --gray-30: rgba(80, 75, 73, 1);
+  --gray-40: rgba(107, 99, 97, 1);
+  --gray-50: rgba(134, 124, 121, 1);
+  --gray-60: rgba(158, 150, 148, 1);
+  --gray-70: rgba(182, 177, 175, 1);
+  --gray-80: rgba(207, 203, 201, 1);
+  --gray-90: rgba(231, 229, 228, 1);
+  --gray-93: rgba(238, 237, 236, 1);
+  --gray-95: rgba(243, 242, 242, 1);
+
+  /* Font variables - updated for accuracy */
+  --body-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --body-font-weight: 400;
+  --body-font-size: 18px;
+  --body-letter-spacing: 0px;
+  --body-line-height: 32px;
+  --body-font-style: normal;
+
+  --uppercase-small-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --uppercase-small-font-weight: 300;
+  --uppercase-small-font-size: 7px;
+  --uppercase-small-letter-spacing: 0.14px;
+  --uppercase-small-line-height: 12px;
+  --uppercase-small-font-style: normal;
+
+  --small-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --small-font-weight: 400;
+  --small-font-size: 11px;
+  --small-letter-spacing: 0.11px;
+  --small-line-height: 16px;
+  --small-font-style: normal;
+
+  --h-6-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-6-font-weight: 400;
+  --h-6-font-size: 29px;
+  --h-6-letter-spacing: -0.29px;
+  --h-6-line-height: 48px;
+  --h-6-font-style: normal;
+
+  --h-5-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-5-font-weight: 400;
+  --h-5-font-size: 47px;
+  --h-5-letter-spacing: -0.94px;
+  --h-5-line-height: 72px;
+  --h-5-font-style: normal;
+
+  --h-4-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-4-font-weight: 500;
+  --h-4-font-size: 76px;
+  --h-4-letter-spacing: -2.28px;
+  --h-4-line-height: 112px;
+  --h-4-font-style: normal;
+
+  --h-3-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-3-font-weight: 600;
+  --h-3-font-size: 123px;
+  --h-3-letter-spacing: -4%;
+  --h-3-line-height: 152px;
+  --h-3-font-style: normal;
+
+  --h-2-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-2-font-weight: 700;
+  --h-2-font-size: 200px;
+  --h-2-letter-spacing: -10px;
+  --h-2-line-height: 296px;
+  --h-2-font-style: normal;
+
+  --h-1-font-family: "Be Vietnam Pro", Helvetica, sans-serif;
+  --h-1-font-weight: 800;
+  --h-1-font-size: 323px;
+  --h-1-letter-spacing: -19.38px;
+  --h-1-line-height: 472px;
+  --h-1-font-style: normal;
+
+  --cards: 0px 2px 6px 0px rgba(189, 191, 190, 1);
+  --picture: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 
+  0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
