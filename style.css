@@ -1889,6 +1889,9 @@ body {
   visibility: visible;
 }
 
+#nav-indicator {
+  display: none; /* Hides the desktop nav indicator on mobile */
+}
 /* --- Optional: Animate Hamburger to an 'X' --- */
 }
 /* Hide hamburger on Desktop */
