@@ -1745,85 +1745,76 @@ section {
 
 
 /* Responsive – keep vertical, adjust spacing */
-@media (max-width: 1024px) {
+
+@media (max-width: 1100px) {
+  
+  /* 1. Main Grid: Change to Single Column */
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 4rem; /* Slightly reduced for a tighter mobile flow */
+    padding: 0 24px;
+  }
+
+  /* 2. Skills & Experience */
+  .skills-tools-experience {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding-left: 0;
+    border-left: none; /* Removes the vertical desktop divider */
+  }
+
+  /* 3. Typography: The "Clamp" is perfect here */
+  .section-title {
+    text-align: center;
+    font-size: clamp(3.5rem, 10vw, 6rem); /* Scaled down slightly for mobile viewport */
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* 4. Reading Width: Essential for UX */
+  .journey {
+    text-align: center;
+    max-width: 100%; /* Allow it to use full width minus padding */
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* 5. Center-align secondary elements */
+  .column-title,
+  .skill-list,
+  .case-study-section-title {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* 6. Case Study Items */
   .case-item {
     flex-direction: column;
-    gap: 2rem;
+    gap: 24px;
+    width: 100%;
   }
 
   .case-image-wrapper {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-  }
-
-  .case-study-section-title {
-    text-align: center;
-  }
-}
-
-/* Responsive – stack everything on smaller screens */
-@media (max-width: 1100px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    gap: 5rem;
-  }
-
-  .skills-tools-experience {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-    padding-left: 0;
-    border-left: none;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: clamp(4.5rem, 12vw, 8rem);
-  }
-
-  .journey {
-    text-align: center;
-    max-width: 80ch;
-    margin: 0 auto;
-  }
-
-  .column-title {
-    text-align: center;
-  }
-
-  .skill-list {
-    text-align: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .about-section {
-    padding: 4rem 6vw 6rem;
-  }
-
-  .section-title {
-    font-size: clamp(3.5rem, 11vw, 6rem);
-    line-height: 0.9;
-  }
-
-  .bio {
-    font-size: 1.15rem;
-    line-height: 1.65;
-  }
-
-  .skills-tools-experience {
-    gap: 3.5rem;
+    aspect-ratio: 16 / 9; /* Maintains a professional landscape look on all phones */
+    border-radius: 8px;
+    overflow: hidden;
   }
 }
 
 /* Force Be Vietnam Pro everywhere in About (safety) */
-.about-section,
-.about-section *,
-.about-section p,
-.about-section span,
-.about-section li,
-.about-section div {
-  font-family: var(--body-font-family) !important;
+/* Cleaner version of your top block */
+.about-section {
+  font-family: var(--body-font-family), sans-serif;
+}
+
+/* If Anima or another tool is forcing a font on specific tags: */
+.about-section p, 
+.about-section span, 
+.about-section li {
+  font-family: inherit;
 }
 
 /* Body base font */
@@ -1855,7 +1846,7 @@ body {
 }
 
 #menu-toggle:checked + .hamburger span:nth-child(1) {
-  transform: rotate(45deg);
+  transform: translateY(9px) rotate(45deg); /* Moves down and rotates */
 }
 
 #menu-toggle:checked + .hamburger span:nth-child(2) {
@@ -1864,128 +1855,1007 @@ body {
 }
 
 #menu-toggle:checked + .hamburger span:nth-child(3) {
-  transform: rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg); /* Moves up and rotates */
 }
 
 /* --- Mobile Navbar Layout --- */
 .landing-page .navbar {
   position: absolute;
-  top: 100%; /* Sits right under the header */
+  top: 100%;
   left: 0;
   width: 100%;
+  height: auto;
   background: white;
   flex-direction: column;
-  padding: 40px 0;
+  padding: 0; /* Start at 0 */
   gap: 30px;
-  border-bottom: 1px solid var(--gray-90);
+  border: 1px solid var(--gray-80);
   
-  /* Hidden state */
-  display: none; 
+  /* Modern Animation Strategy */
+  max-height: 0;
+  overflow: visible;
+  visibility: hidden;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 9999;
 }
 
-/* --- The "Magic" Toggle --- */
 #menu-toggle:checked ~ .navbar {
-  display: flex;
+  display: flex; /* Keep this so the layout stacks */
+  max-height: 500px; /* Big enough to fit your links */
+  padding: 4px 0;
+  padding-bottom: 24px;
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
 }
 
 /* --- Optional: Animate Hamburger to an 'X' --- */
-#menu-toggle:checked ~ .hamburger span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
 }
-#menu-toggle:checked ~ .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle:checked ~ .hamburger span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 /* Hide hamburger on Desktop */
-@media (min-width: 769px) {
-  .hamburger { display: none; }
-}
-  /* 1. Reset the Landing Page Height */
+
+
+@media (max-width: 768px) {
+
+  :root {
+  /* Scale down the massive display type for mobile */
+  
+  /* H1: From 323px -> 80px (Big enough to be "Display", small enough to fit) */
+  --h-1-font-size: 80px;
+  --h-1-line-height: 90px;
+  --h-1-letter-spacing: -3px;
+
+  /* H2: From 200px -> 60px */
+  --h-2-font-size: 60px;
+  --h-2-line-height: 70px;
+  --h-2-letter-spacing: -2px;
+
+  /* H3: From 123px -> 48px */
+  --h-3-font-size: 48px;
+  --h-3-line-height: 56px;
+  --h-3-letter-spacing: -1.5px;
+
+  /* H4: From 76px -> 36px */
+  --h-4-font-size: 36px;
+  --h-4-line-height: 44px;
+  --h-4-letter-spacing: -1px;
+
+  /* H5: From 47px -> 28px */
+  --h-5-font-size: 28px;
+  --h-5-line-height: 36px;
+  --h-5-letter-spacing: -0.5px;
+
+  /* H6: From 29px -> 22px */
+  --h-6-font-size: 22px;
+  --h-6-line-height: 30px;
+
+  /* Body text: Dropping from 18px to 16px is better for mobile reading */
+  --body-font-size: 16px;
+  --body-line-height: 26px;
+
+  /* Small Uppercase: Boosting from 7px -> 10px so it's actually legible */
+  --uppercase-small-font-size: 10px;
+  --uppercase-small-line-height: 14px;
+  }
+  /* 1. Adjust the scroll offset for shorter mobile headers */
+  section {
+    scroll-margin-top: 60px; 
+  }
+
+  /* 2. Improve tap targets for mobile users */
+  .navbar a {
+    padding: 12px 0; /* Vertical padding makes them easier to press */
+    display: block;  /* Stack links if they are in a mobile menu */
+    font-size: 16px; /* Ensures readability on small screens */
+  }
+
   .landing-page {
-    height: auto;
+    height: auto; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 100px; /* Space for the fixed header */
+    padding-bottom: 50px;
   }
 
-  /* 2. Stack the Hero Section */
+  /* 2. Un-stack the content frames */
   .landing-page .frame {
-    position: relative;
-    width: 90%;
-    left: 5%;
+    position: relative; /* Change from absolute */
     top: 0;
-    padding: 0;
-    text-align: center;
-    align-items: center;
-  }
-
-  .landing-page .heading {
-    font-size: 56px; /* Scaled down from 104px */
-    line-height: 1.1;
-    letter-spacing: -1px;
-  }
-
-  .landing-page .text-wrapper {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .landing-page .subtext {
-    width: 100%;
-    font-size: 18px;
-  }
-
-  /* 3. Adjust the Profile Image */
-  .landing-page .right-side {
-    position: relative;
-    top: 40px;
     left: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
+    padding: 24px 24px 20px 24px; /* Space for the fixed header */
+    align-items: center; /* Center text/buttons for mobile */
+    text-align: center;
+    gap: 16px;
   }
 
+  /* 3. Handle the image container */
+  .landing-page .right-side {
+    position: relative; /* Change from absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 340px; /* Prevents image from being too huge */
+    margin: 0 auto;
+    aspect-ratio: auto;
+  }
+
+  /* Inside your media query */
   .landing-page .img {
     position: relative;
-    left: 0;
     top: 0;
-    width: 280px;
-    height: 400px;
-    margin: 0 auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Keeps it looking professional */
+    object-position: center;
+    margin-top: 100px; /* Optional: adds a little gap below your text frame */
   }
 
-  /* 4. Hide Decorative Lines on Mobile */
-  /* These often cause horizontal scrolling (bugs) on small screens */
+  /* 4. Hide the decorative lines on mobile */
+  /* These fixed-pixel lines usually break layouts on small screens */
   .landing-page .line-top,
   .landing-page .line-bottom,
   .landing-page .line-right,
   .landing-page .line-left,
-  .decor-line,
-  .case-study-line {
+  .landing-page svg.line-svg {
     display: none;
   }
 
-  /* 5. Clean up the Header for Mobile */
-  .landing-page .header {
-    padding: 16px 24px;
+  .landing-page .heading {
+    font-size: 56px; /* High-impact but fits the screen width */
+    line-height: 1.1;
+    letter-spacing: -2px;
+    text-align: center;
   }
 
+  /* 2. Style the "UI/UX Designer" role text */
+  .landing-page .text-wrapper {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* 3. Fix the subtext width */
+  .landing-page .subtext {
+    width: 100%; /* Removes the fixed 611px width that causes overflow */
+    max-width: 400px; /* Keeps line length readable */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 auto; /* Centers the block if the parent is centered */
+  }
+
+  /* 4. Stack the CTA buttons vertically for better thumb reach */
+  .landing-page .CT-as {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  /* 5. Make buttons full-width for a modern 2026 app-like feel */
+  .landing-page .div-wrapper {
+      display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--main-accent-20);
+     /* Slightly taller for easier
+     tapping */
+  }
+
+  /* Adjust spacing between sections */
+  .landing-page .left-side, 
+  .landing-page .div, 
+  .landing-page .frame-2 {
+    gap: 24px;
+    align-items: center;
+  }
+
+  .landing-page .div-wrapper:hover,
+  .landing-page .frame-3:hover {
+    transform: none;
+    box-shadow: var(--cards); /* Revert to standard shadow */
+  }
+
+  /* 2. Visual feedback for the ACTUAL tap (Active state) */
+  .landing-page .div-wrapper:active,
+  .landing-page .frame-3:active {
+    transform: scale(0.98); /* Slight shrink feels more "tactile" on mobile */
+    filter: brightness(0.9);
+    transition: transform 0.1s ease;
+  }
+
+  /* 3. Handle long button text */
+  .landing-page .text-wrapper-2,
+  .landing-page .text-wrapper-3 {
+    white-space: normal; /* Allows text to wrap if the button is very narrow */
+    line-height: 1.2;
+    font-size: 16px; /* Slightly smaller for mobile utility */
+  }
+
+  /* 4. Disable 3D tilt on mobile to save battery and reduce lag */
+  .tilt-btn {
+    transform: none !important;
+    perspective: none !important;
+  }
+
+  /* 5. Keep the ripple effect! */
+  /* It’s a great mobile interaction pattern for 2026 */
+  .ripple {
+    background: rgba(255, 255, 255, 0.4); /* Slightly higher contrast for mobile */
+  }
+
+  .landing-page .stats {
+    width: 100%; /* Remove fixed 511px */
+    max-width: 350px; /* Keep it compact for readability */
+    justify-content: space-around; /* Distributes stats evenly */
+    padding: 20px 0;
+    margin: 0 auto;
+  }
+
+  .landing-page .frame-4,
+  .landing-page .frame-5 {
+    width: 150x; /* Allow stats to size based on content */
+    align-items: center; /* Center labels under numbers */
+    text-align: center;
+    gap: 4px;
+  }
+
+  .landing-page .text-wrapper-4 {
+    font-size: 24px; /* Slightly smaller for mobile */
+    line-height: 1;
+  }
+
+  .landing-page .text-wrapper-5 {
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  /* 2. Fix the Header/Navbar for mobile */
+  .landing-page .header {
+    padding: 16px 24px; /* Significant reduction from 140px */
+    height: 70px;
+    justify-content: center;
+  }
+
+  /* Adjust the minimized state for mobile */
+  .header.minimized {
+    padding: 8px 20px;
+    transform: translateY(0); /* Don't lift it too high on small screens */
+  }
+
+  /* 3. Disable Reveal offsets if they feel sluggish */
+  .reveal {
+    transform: translateY(10px); /* Smaller movement is smoother on mobile */
+  }
+
+  html, body {
+    /* Prevents horizontal "wobble" on mobile */
+    overflow-x: hidden; 
+    /* Ensures the background color fills the screen even when scrolling */
+    height: auto;
+    min-height: 100%;
+    /* Improves smooth scrolling on iOS 2026 devices */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Universal font adjustment for mobile accessibility */
+  body {
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    color: var(--main-primary-10);
+    background-color: var(--gray-93);
+  }
+
+  /* Optional: Standardize button tap height for the whole site */
+  button, .btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .header.minimized:hover {
+    transform: none; /* Prevents jumping when touched */
+    padding: 10px 24px; /* Matches the standard minimized state */
+  }
+
+  /* 2. Adjust the Header Inner Container */
+  .landing-page .header-2 {
+    flex-direction: row; /* Keep logo and menu on the same line */
+    justify-content: space-between;
+  }
+
+  /* 3. Handle the Logo (Vector) scaling */
+  /* Since your original vectors are absolutely positioned, we scale the frame */
+  .landing-page .frame-6 {
+    transform: scale(0.7); /* Smaller logo for mobile */
+    transform-origin: left center;
+  }
+
+  /* 4. Fix the Navbar Links */
   .landing-page .navbar {
-    gap: 15px; /* Tighter spacing for links */
+    gap: 20px; /* Reduced from 40px to fit common phone widths */
   }
 
   .landing-page .text-wrapper-6 {
+    font-size: 14px; /* Smaller font to ensure all 3-4 links fit */
+    letter-spacing: 0;
+  }
+
+  /* 5. The Navigation Indicator Fix */
+  /* We shift from the underline to the vertical bar logic we put in your JS */
+  #nav-indicator {
+    bottom: auto;
+    left: 0;
+    width: 3px; /* Vertical indicator for mobile */
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  /* Hide the ::after underline on mobile to prevent double-styling */
+  .text-wrapper-6.active::after {
+    display: none;
+  }
+
+  .landing-page .navbar:hover .text-wrapper-6,
+  .landing-page .navbar:hover .frame-7 {
+    opacity: 1;
+  }
+
+  /* 2. Fix the Button Link (.frame-7) */
+  .landing-page .frame-7 {
+    padding: 8px 16px; /* Slightly larger for thumb-tapping */
+    margin: 0; /* Reset desktop negative margins */
+    display: flex;
+    justify-content: center;
+    border-radius: 4px; /* Optional: adds a slightly modern touch */
+  }
+
+  /* 3. Handle the "Active" state instead of Hover */
+  /* On mobile, we want visual feedback when the link is actually pressed */
+  .landing-page .text-wrapper-6:active,
+  .landing-page .frame-7:active {
+    color: var(--main-accent-20);
+    opacity: 0.7;
+    background-color: rgba(28, 89, 32, 0.1); /* Very subtle tint on tap */
+  }
+
+  /* 4. Ensure "Contact" button is readable */
+  .landing-page .frame-7:active .text-wrapper-7 {
+    color: var(--main-accent-20);
+  }
+
+  /* 5. Prevent text wrapping inside buttons */
+  .landing-page .text-wrapper-7 {
     font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .about-section {
+    padding: 4rem 20px 40px;
+    overflow: hidden; /* Clips any stray decorative lines */
+  }
+
+  /* 2. Hide or scale the decorative lines */
+  /* Fixed pixel lines usually don't work on fluid mobile screens */
+  .decor-line {
+    display: none; 
+  }
+
+  /* 3. Re-center or align the Title */
+  .section-title {
+    text-align: center;
+    margin-bottom: 24px;
+    /* Uses the variables we defined earlier in the root mobile fix */
+    font-size: var(--h-2-font-size); 
+    line-height: var(--h-2-line-height);
+  }
+
+  /* 4. Reset Wrapper and Bio padding */
+  .content-wrapper {
+    top: 0;
+    left: 0;
+  }
+
+  .bio {
+    padding-left: 0; /* Removes that 82px offset */
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* 5. Stack the 3-column block vertically */
+  .skills-tools-experience {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 48px; /* More space between categories */
+    align-items: center;
+  }
+
+  .skills-tools-experience > div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .column-title {
+    text-align: center;
+    font-size: var(--h-5-font-size);
+    margin-bottom: 20px;
+  }
+
+  /* 6. List and Experience Adjustments */
+  .skill-list li {
+    justify-content: center;
+    white-space: normal; /* Allow text to wrap if it's a long skill name */
+  }
+
+  .role-date-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .date {
+    margin-top: 4px;
+  }
+
+  .company {
+    text-align: center;
+  }
+
+  .case-studies-section {
+    padding: 80px 20px 40px; /* Much more balanced for mobile */
+    overflow: hidden; /* Safety net for decorative elements */
+  }
+
+  /* 2. Fix the decorative line */
+  .case-study-line.horizontal {
+    display: none;
+  }
+
+  /* 3. Ensure the grid items stack correctly */
+  /* If you have a grid inside this section, make sure it's 1-column */
+  .case-studies-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .case-study-line.vertical {
+    display: none;
+  }
+
+  /* 2. Fix the Title */
+  .case-study-section-title {
+    font-size: var(--h-2-font-size); /* Use our root mobile size */
+    line-height: 1.1; /* Reset from the massive 232px */
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  /* 3. The List Container */
+  .case-list {
+    max-width: 100%;
+    margin-top: 0;
+    padding: 0 10px;
+  }
+
+  /* 4. CRITICAL: The Row Container Fix */
+  .first-case-study {
+    display: flex; /* Switch from inline-flex */
+    flex-direction: column; /* Stack vertically for mobile thumbs */
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0;
+    min-width: 0; /* REMOVE the 1223px that causes horizontal scrolling */
+    width: 100%;
+  }
+
+  /* 5. Title and Hover Behavior */
+  .case-title {
+    white-space: normal;
+    margin-bottom: 16px; /* Allow titles to wrap on small screens */ /* Proportional size for project names */
+  }
+
+  .first-case-study:hover {
+    transform: none; /* Disable lift effect on mobile to prevent "sticky" taps */
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Active state for tactile feedback instead of hover */
+  .first-case-study:active {
+    background: rgba(0, 180, 164, 0.05); /* Very light tint using your brand green */
+  }
+
+  .case-content-wrapper {
+    width: 100%; /* Remove fixed 1141px */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* 2. Adjust the Info Group (Number + Text) */
+  .case-info-group {
+    gap: 20px; /* Reduced from 61px to fit mobile width */
+    width: 100%;
+  }
+
+  /* 3. Scale the Image for Mobile */
+  .case-image-wrap {
+    width: 100%; /* Make image span the width of the card */
+    height: 180px; /* Taller for better visibility on mobile */
+  }
+
+  .case-image-wrap img {
+    object-fit: cover; /* Ensures the thumbnail looks good at new aspect ratio */
+  }
+
+  /* 4. The Arrow Position *
+
+  /* 5. Disable the Underline Transition */
+  /* On touch, the line scaling can feel "laggy". Keep it simple. */
+  .case-title::after {
+    transform: scaleX(1); /* Keep underlined for clarity */
+    opacity: 0.2;
+    bottom: -16px;
+  }
+
+  /* 6. Fix Typography */
+  .case-number {
+    font-size: 14px; /* Slightly smaller for the "index" feel */
+    opacity: 0.6;
+  }
+
+  .case-text-stack {
+    width: 100%; /* Removes fixed 636px */
+    gap: 12px;
+  }
+
+  /* 2. Allow tags to wrap on small screens */
+  .case-meta {
+    display: flex;
+    flex-direction: row; /* Forces horizontal alignment */
+    align-items: center; /* Vertically centers the date with the tag */
+    justify-content: space-between; /* Pushes Tag to left, Date to right */
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  /* 3. Refine Tag Sizes for Mobile */
+  .category-tag,
+  .category-tag-2,
+  .category-tag-3,
+  .category-tag-4 {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  /* 4. Ensure Typography is Readable */
+  .case-title {
+    font-size: 20px; /* Stronger presence on mobile */
+    line-height: 1.2;
+  }
+
+  .p {
+    font-size: 15px; /* Slightly tighter for mobile reading */
+    line-height: 1.5;
+    color: var(--gray-30);
+  }
+
+  /* 5. Date adjustment */
+  .case-date {
+    width: 100%; /* Forces the year to sit nicely or align with tags */
+    font-size: 13px;
+  }
+
+  .role-tags {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+
+  .tag-frame {
+    height: auto; /* Let it breathe on small screens */
+    padding: 6px 10px;
+  }
+
+  /* 2. Responsive Arrow Button */
+
+  .subway-up-arrow-wrapper {
+    border: none !important;      /* Removes the circle border */
+    background: none !important;  /* Removes any background color */
+    width: auto !important;       /* Allows it to shrink to the arrow size */
+    height: auto !important;      /* Removes the fixed height */
+    padding: 0 !important;        /* Removes internal crowding */
+    
+    /* Position it so it doesn't crowd the text */
+    position: absolute;
+    top: 24px;
+    right: 0;
+  }
+
+  /* 2. Style the arrow itself so it's visible but out of the way */
+  .subway-up-arrow {
+    width: 20px;   /* Slightly larger since the circle is gone */
+    height: 20px;
+    opacity: 0.8;  /* Subtle look */
+    display: block !important; /* Ensures it stays visible */
+    
+    /* Keep it permanently angled for that "Link" look */
+    transform: rotate(45deg); 
+  }
+
+  /* 3. Give the text stack more room now that the circle is gone */
+
+  /* 3. Image Performance */
+  .daily-QR-code-page {
+    /* Ensure the QR Case Study image doesn't lag the scroll */
+    will-change: transform;
+    transition: transform 0.4s ease-out; /* Slightly faster for mobile */
+  }
+
+  .mini-projects-section {
+    padding: 60px 24px; /* Matches the 'breathable' padding of other sections */
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* 2. Hide fixed-pixel lines */
+  .decor-line.horizontal-mini,
+  .decor-line.vertical-mini {
+    display: none;
+  }
+
+  /* 3. Title Scaling */
+  .mini-main-title {
+    font-size: 32px; /* Smaller than H2, but still punchy */
+    line-height: 1.2;
+    text-align: center; /* Centering the title usually feels more intentional on mobile */
+    width: 100%;
+  }
+  .mini-header {
+    margin-bottom: 48px; /* Reduced from 104px to keep momentum */
+    align-items: center;
+    text-align: center;
+  }
+
+  .mini-intro-text {
+    width: 100%; /* Removes fixed 660px */
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* 2. Grid Layout - Switch to Single Column */
+  .mini-cards-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 32px; /* Breathing room between cards */
+    width: 100%;
+  }
+
+  /* 3. Card Adjustments */
+  .mini-card {
+    width: 100%; /* Removes fixed 400px */
+    padding: 0 0 24px; /* Clean up bottom padding */
+    gap: 20px;
+  }
+
+  /* 4. Image Fix (The "Negative Margin" Trap) */
+  .mini-card-img,
+  .mini-card-img-task-7 {
+    width: 100%;
+    height: 220px; /* Consistent height for mobile scanning */
+    margin-left: 0; /* Reset desktop negative margins */
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  /* 5. Disable Hover for Touch Devices */
+  /* Hover effects can feel "stuck" on mobile. We'll simplify. */
+  .mini-card:hover {
+    transform: none; 
+  }
+
+  .mini-card:active {
+    transform: scale(0.98); /* Tactile "press" effect instead of lift */
+    background-color: var(--gray-95);
+  }
+
+  .mini-card:hover .mini-card-img,
+  .mini-card:hover .mini-card-img-task-7 {
+    transform: none; /* Prevents accidental zooming while scrolling */
+  }
+
+  /* 6. View Text */
+  .mini-card .view-text {
+    color: var(--main-accent-20); /* Keep it colored so it's clearly a link */
+    font-weight: 700;
+  }
+
+  .mini-card-content {
+    width: 100%; /* Removes fixed 347px */
+    padding: 0 16px; /* Adds internal breathing room since we removed negative margins */
+  }
+
+  /* 2. Typography Fixes */
+  .mini-project-name {
+    font-size: 18px; /* Slightly larger for easier mobile scanning */
+    text-wrap: wrap; /* CRITICAL: Prevents titles from breaking the card width */
+    margin-bottom: 8px;
+    letter-spacing: normal; /* Resets desktop expansion */
+  }
+
+  .mini-project-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+
+    /* 1. The Standard Property (Clears the error) */
+    line-clamp: 2; 
+
+    /* 2. The Legacy Webkit Properties (For older browsers/Safari) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    
+    /* 3. Safety Net */
+    overflow: hidden;
+  }
+
+  /* 3. Tag System for Mobile */
+  .mini-tag {
+    height: auto;
+    padding: 6px 12px; /* Larger tap/visual area */
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    /* Disable hover effects that can be 'sticky' on touch */
+    pointer-events: none; 
+  }
+
+  /* 4. Horizontal Alignment for Tag and Footer */
+  /* If you want the tag and date/view-text to feel balanced */
+  .mini-card-footer {
+    padding-top: 12px;
+    width: 100%;
+    border-color: var(--gray-85); /* Slightly darker for better visibility on small screens */
+  }
+
+  /* 5. Image position tweak */
+  .mini-card-img-task-7 {
+    width: 100%;
+    height: 200px;
+    margin: 0; /* Clear those negative margins */
+    object-position: center center; /* Reset the 3% shift for standard mobile view */
+  }
+
+  .mini-card-footer {
+    border-top-color: var(--gray-80); /* Slightly darker than desktop default for contrast */
+    padding-top: 12px;
+  }
+
+  /* 2. View Text - Make it look like a clear link */
+  .view-text {
+    color: var(--main-accent-20); /* Use your signature green */
+    font-weight: 700;
+  }
+
+  /* 3. The Mini Arrow Circle - Adjust for touch */
+  .mini-arrow-circle {
+    width: 28px;  /* Increased from 20px for a better touch target */
+    height: 28px;
+    border-radius: 14px;
+    border-width: 1px; /* Thicker border for mobile visibility */
+    
+    /* On mobile, let's keep the 'active' look visible or subtle */
+    background-color: transparent;
+    border-color: var(--gray-80);
+    
+    /* Point the arrow top-right permanently */
+    transform: rotate(-45deg); 
+  }
+
+  /* 4. The Icon */
+  .mini-arrow-icon {
+    width: 12px;
+    height: 12px;
+    filter: none; /* Keep original color unless the circle is filled */
+  }
+
+  /* 5. Tap Feedback (The Mobile 'Hover') */
+  .mini-card:active .mini-arrow-circle {
+    background-color: var(--gray-20);
+    border-color: var(--gray-20);
+  }
+
+  .mini-card:active .mini-arrow-icon {
+    filter: brightness(0) invert(1); /* Flip color on tap */
+  }
+
+  .contact-section {
+    padding: 60px 0; /* Vertical breathing room */
+  }
+
+  /* 2. Responsive Inner Container */
+  .contact-inner {
+    padding: 0 24px; /* Reduced from 96px for more text width */
+    max-width: 100%;
+  }
+
+  /* 3. Header Spacing */
+  .contact-header {
+    margin-top: 40px;
+    margin-bottom: 60px; /* Halved from 120px to keep content connected */
+    gap: 24px;
+  }
+
+  /* 4. The Big Arrow Circle */
+  .subway-up-arrow-wrapper-contact {
+    width: 60px; /* Slightly smaller for mobile screens */
+    height: 60px;
+    border-radius: 30px;
+    border-width: 1px; /* Thinner border looks cleaner on high-DPI screens */
+  }
+
+  .subway-up-arrow-contact {
+    width: 24px; /* Scaled down slightly */
+    height: 24px;
+  }
+
+  .contact-main-title {
+    font-size: 48px; /* Scales down from huge desktop size */
+    line-height: 1.1; /* Resets the 232px gap */
+    margin-bottom: 24px;
+  }
+
+  .contact-description {
+    font-size: 18px; /* Slightly punchier for readability */
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  /* 2. Link Rows - Vertical Stacking */
+  .contact-links-list {
+    margin-bottom: 40px;
+  }
+
+  .email-frame, 
+  .linkedin-frame {
+    padding: 32px 0; /* Tighter padding for mobile screens */
+  }
+
+  /* 3. Handling the Text Stacks (Crucial Fix) */
+  .link-text-stack-email,
+  .link-text-stack-linkedin {
+    flex-direction: column; /* Stacks 'EMAIL' above the actual address */
+    align-items: flex-start;
+    gap: 8px; /* Replaces the 160px/133px desktop gaps */
+  }
+
+  /* 4. Font Size Adjustments for the Links */
+  .link-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .link-value {
+    font-size: 20px; /* Large enough to be a clear touch target */
+    word-break: break-all; /* Prevents long emails from breaking the layout */
+  }
+
+  /* 5. The Link Item Arrow */
+  /* If you have an arrow on the right, ensure it doesn't get squashed */
+  .contact-link-item {
+    align-items: flex-end; /* Aligns arrow with the bottom of the stacked text */
+  }
+
+  .social-icons-row {
+    gap: 20px; /* Tighter gap for smaller screens */
+    margin-bottom: 48px;
+    justify-content: center;
+  }
+
+  /* 2. Disable Magnetic Effect on Touch */
+  .magnetic-item {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* 3. Social Icon Container - Adjust for Tap */
+  .social-icon-box {
+    width: 60px; /* Slightly smaller for mobile */
+    height: 60px;
+    padding: 12px;
+    /* Show the signature green by default or remove it to stay minimalist */
+  }
+
+  /* Provide tactile feedback on Tap instead of Hover */
+  .social-icon-box:active {
+    background-color: rgba(151, 222, 155, 0.15);
+    transform: scale(0.95); /* Slight "squish" feel */
+  }
+
+  /* 4. Contact Row Interactions (Email/LinkedIn) */
+  .email-frame:hover, .linkedin-frame:hover {
+    background-color: transparent; /* Prevent sticky hover tint */
+    padding-left: 0;
+  }
+
+  .email-frame:active, .linkedin-frame:active {
+    background-color: rgba(151, 222, 155, 0.05); /* Tap feedback */
+  }
+
+  /* 5. The Arrow Circle - Permanent Link State */
+  .subway-up-arrow-wrapper-contact {
+    width: 48px; /* Standardize for mobile tap target */
+    height: 48px;
+    background-color: transparent;
+    border-color: var(--gray-40);
+    transform: rotate(45deg); /* Permanently angled to show it's a link */
+  }
+
+  /* 6. Arrow Icon reset */
+  .subway-up-arrow-contact {
+    width: 20px;
+    height: 20px;
+    filter: none;
+  }
+
+  /* Active state for the link arrow */
+  .contact-link-item:active .subway-up-arrow-wrapper-contact {
+    background-color: var(--accent-50);
+    border-color: var(--accent-50);
+  }
+
+  .contact-link-item:active .subway-up-arrow-contact {
+    filter: brightness(0) invert(1);
+  }
+
+  /* 7. Typography Reset */
+  .link-value {
+    letter-spacing: normal !important; /* Prevent text jumping on tap */
+  }
+
+  .main-footer {
+    padding: 32px 0; /* Adds vertical space for the mobile scroll-end */
+  }
+
+  /* 2. Footer Content Alignment */
+  .footer-content {
+    flex-direction: column; /* Stacks Logo and Copyright vertically */
+    gap: 24px; /* Space between Logo and Copyright */
+    padding: 0 24px; /* Matches the 24px side-padding of your other sections */
+    margin: 0;
+    text-align: center;
+  }
+
+  /* 3. Logo Group Scaling */
+  .footer-logo-group {
+    justify-content: center; /* Centers the RBJ logo on the mobile screen */
+    margin-bottom: 8px;
+    width: auto; /* Allows it to center properly */
+  }
+
+  .main-footer .r,
+  .main-footer .b,
+  .main-footer .j {
+    height: 32px; /* Slightly smaller logo for mobile */
+    margin-right: -12px; /* Tightens the letter overlapping for mobile */
+    top: 0;
+  }
+
+  /* 4. Copyright Text */
+  .footer-content .copyright-text {
+    font-size: 12px; /* Slightly smaller for a clean, secondary feel */
+    line-height: 1.5;
+    width: 100%;
   }
 }
 
@@ -2091,67 +2961,3 @@ body {
   color: white;
   transform: translateY(-5px);
 }
-
-/* --- MOBILE REFINEMENTS (Below 768px) --- */
-@media (max-width: 768px) {
-  .contact-inner {
-    padding: 40px 24px; /* Reduced side margins for mobile */
-  }
-
-  .contact-main-title {
-    font-size: 64px; /* Scaled down from the massive desktop size */
-    line-height: 1.1;
-  }
-
-  /* Stack the Email/LinkedIn labels on top of the values */
-  .link-text-stack-email, 
-  .link-text-stack-linkedin {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px; /* Tight gap for a clean "Label/Value" look */
-  }
-
-  .link-value {
-    font-size: 18px; /* Smaller font to prevent horizontal scrolling */
-    word-break: break-all; /* Safety measure for very small screens */
-  }
-
-  .email-frame, .linkedin-frame {
-    padding: 32px 0; /* Slightly tighter padding for mobile */
-  }
-
-  /* Make the arrow circle a bit smaller for thumb-tapping */
-  .subway-up-arrow-wrapper-contact {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Hide the sliding line on mobile, use a different style */
-  #nav-indicator { display: none; }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hidden by default */
-    width: 80%;
-    height: 100vh;
-    background: var(--main-primary-10); /* Dark mode bg */
-    flex-direction: column;
-    justify-content: center;
-    transition: right 0.5s var(--premium-curve);
-    z-index: 999;
-  }
-
-  /* When checkbox is checked (hamburger clicked) */
-  #menu-toggle:checked ~ .navbar {
-    right: 0;
-  }
-
-  .text-wrapper-6 {
-    font-size: 24px;
-    margin: 20px 0;
-  }
-}
-
