@@ -3255,5 +3255,963 @@ strong {
     }
 }
 
+@media (max-width: 768px) {
+  /* 1. Reset Header Padding */
+  .header {
+    padding: 0 24px; /* Standardize with the rest of your site */
+    height: 60px; /* Slightly taller for better thumb-tapping */
+  }
+
+  /* 2. Fix the Minimized State on Mobile */
+  /* On mobile, we don't want it to feel like it's "shrinking" too much */
+  .header.minimized {
+    height: 54px; 
+    transform: translateY(0); /* Don't hide bulk on mobile; keep it accessible */
+    padding: 0 24px;
+  }
+
+  .header.minimized .header-content {
+    transform: scale(1); /* Keep scale 1 on mobile for legibility */
+  }
+
+  /* 3. The Back Button Text */
+  /* If 'Back to Portfolio' is too long for small screens: */
+  .header .back-to-portfolio {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* 4. Glassmorphism Performance */
+  /* Some older Androids struggle with blur + fixed headers */
+  .header {
+    background-color: rgba(242, 242, 242, 0.9); /* var(--gray-93) with alpha */
+    backdrop-filter: blur(8px);
+  }
+
+  /* 5. Target Offset for Mobile */
+  :target {
+    scroll-margin-top: 80px; /* Slightly less for mobile headers */
+  }
+
+  .header .logo {
+    width: 60px; /* Slightly tighter overlap for mobile */
+    height: 40px; /* Scale down the logo height */
+    margin-top: 0; /* Align it to the center of the 60px header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 2. Scale the Overlapped Letters */
+  .header .r, .header .b, .header .j {
+    height: 40px; /* Reduced from 60px */
+    width: 28px;  /* Proportional reduction */
+    top: 0;
+  }
+
+  .header .r { left: 0; }
+  .header .b { left: 12px; }
+  .header .j { left: 24px; width: 24px; }
+
+  /* 3. Page Indicators (The Dot/Rectangle) */
+  /* If the header is too crowded, we hide these or scale them down */
+  .header .page-indicator,
+  .header .next-page-indicator {
+    transform: translateY(-50%) scale(0.8); /* Shrink slightly */
+    right: 0;
+  }
+
+  /* 4. Minimized State Specifics */
+  .header.minimized .logo {
+    transform: scale(0.85); /* Shrink the branding even further when scrolling */
+    margin-top: 0;
+  }
+
+  .hero {
+    flex-direction: column; /* Stack Mockup and Text vertically */
+    padding: 80px 24px 40px; /* Standardize side padding, add top space for fixed header */
+    gap: 32px; /* Reduce massive 106px gap */
+    width: 100%;
+  }
+
+  /* 2. Mockup Side Container */
+  .hero .left-side,
+  .left-side .mockup {
+    width: 100%; /* Make mockup responsive */
+    height: auto; /* Let height adjust based on image ratio */
+    aspect-ratio: 4 / 3; /* Keeps the frame consistent */
+  }
+
+  /* 3. Responsive Tags */
+  .left-side .tag,
+  .left-side .tag-2,
+  .left-side .tag-3,
+  .left-side .tag-4 {
+    top: 16px; /* Move tags closer to the corner */
+    left: 16px;
+    height: 20px; /* Slimmer for mobile */
+    font-size: 11px; /* Smaller text */
+    padding: 2px 6px;
+  }
+
+  /* 4. Page Indicator Interaction */
+  /* Remove hover scale on touch devices to prevent "sticky" zoom */
+  .page-indicator a.left-circle:hover,
+  a.next-left-circle:hover,
+  a.previous-right-circle:hover {
+    transform: none;
+  }
+  
+  /* Use active state for tactile feedback */
+  .page-indicator a.left-circle:active,
+  a.next-left-circle:active {
+    transform: scale(1.2);
+    background-color: var(--main-accent-20);
+  }
+
+  .hero .right-side {
+    gap: 24px; /* Tighter gap for mobile momentum */
+    width: 100%;
+    padding: 0; /* Ensures it stays flush with the hero padding */
+  }
+
+  /* 2. Top Part (Title & Date) */
+  .hero .top-part {
+    padding-bottom: 24px; /* Reduced from 40px */
+    gap: 12px;
+  }
+
+  /* 3. Date & Title Typography */
+  .hero .date {
+    font-size: 12px; /* Ensure it stays secondary */
+    margin-bottom: 4px;
+  }
+
+  .hero .top-part .title {
+    font-size: 24px; /* Adjusting H5 for mobile readability */
+    line-height: 1.2;
+    letter-spacing: -0.01em; /* Tighter letters for a "Premium" look */
+  }
+
+  /* 4. Tag Content Fix */
+  /* Ensure the text inside the tags doesn't wrap awkwardly */
+  .tag .soft-app,
+  .tag-2 .soft-app-2,
+  .tag-3 .soft-app-3,
+  .tag-4 .soft-app-4 {
+    font-size: 10px;
+    letter-spacing: 0.05em; /* Tracking out small caps/bold text looks cleaner */
+    text-transform: uppercase;
+  }
+
+  .hero .bottom-part {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for a balanced grid */
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Make the first item (usually Role) span full width if needed, or keep 2x2 */
+  .hero .role-content {
+    grid-column: span 2; 
+    padding-bottom: 16px;
+  }
+
+  /* 2. NDA Text */
+  .hero .nda {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 8px;
+  }
+
+  /* 3. The Problem Section - Padding Reset */
+  .the-problem {
+    padding: 64px 24px 0px 24px; /* Massive 308px reset to standard 24px */
+  }
+
+  /* 4. Title and Icon Adjustments */
+  .title-and-icon {
+    gap: 12px;
+  }
+
+  .title-and-icon .icon {
+    width: 32px; /* Scale down the icon slightly */
+    height: 32px;
+  }
+
+  .title-and-icon .section-title {
+    font-size: 20px; /* Adjust based on your h-font variables */
+  }
+
+  .title-and-icon .title {
+    white-space: normal; /* Allow titles to wrap on small screens */
+    font-size: 18px; /* Slightly smaller for mobile hierarchy */
+    line-height: 1.2;
+  }
+
+  /* 2. Interactive Buttons (Frame-7) */
+  .frame-7 {
+    width: 100%; /* Make buttons full-width for easier thumb tapping */
+    margin: 8px 0;
+    padding: 12px; /* Larger hit area */
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .text-wrapper-7 {
+    white-space: normal; /* Allow text to wrap if it's a long link */
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Disable hover lift on mobile to prevent 'stuck' states */
+  .frame-7:hover {
+    transform: none;
+  }
+
+  /* 3. The Problem Description */
+  .the-problem .description {
+    font-size: 15px; /* Slightly larger for better mobile reading */
+    line-height: 1.6;
+    margin-top: 16px; /* Reduced from 24px */
+  }
+
+  /* 4. User Needs Container */
+  .the-problem .admin-user-needs {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+
+  /* 5. Flex Content Reset */
+  .content {
+    flex-direction: column; /* Stacks side-by-side content vertically */
+    gap: 20px;
+  }
+
+  .goals-and-objectives {
+    padding: 48px 24px 0 24px; /* Matches the standard mobile gutter */
+  }
+
+  /* 2. Column Stacking */
+  .goals-and-objectives .content {
+    flex-direction: column; /* Stack the columns vertically */
+    gap: 32px; /* Add space between the two sets of objectives */
+    margin-top: 20px;
+  }
+
+  /* 3. Remove Max-Width Constraints */
+  .goals-and-objectives .first-column,
+  .goals-and-objectives .second-column {
+    max-width: 100%; /* Let text breathe across the full width */
+    padding-left: 16px; /* Slightly tighter indent for mobile */
+  }
+
+  /* 4. List Item Typography Adjustments */
+  .content li,
+  .text-side li {
+    font-size: 15px; /* Matches the mobile body size we set earlier */
+    line-height: 1.5;
+    padding-left: 8px; /* Better spacing from the bullet point */
+  }
+
+  /* 5. The Challenge Text */
+  .challenge {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 12px 0;
+    padding: 12px;
+    border-left: 2px solid var(--navy-15); /* Adds a subtle quote-style visual */
+    background-color: rgba(0, 51, 102, 0.03); /* Very faint tint to highlight the challenge */
+  }
+
+  /* 6. Admin User Needs Title */
+  .admin-user-needs .title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .understanding-the-workflow,
+  .understanding-the-user-and-workflow,
+  .process {
+    padding: 64px 24px 40px 24px; /* Reset 308px to mobile standard */
+  }
+
+  /* 2. Insight Box Styling */
+  .understanding-the-workflow .insight,
+  .understanding-the-user-and-workflow .insight {
+    padding: 12px 16px; /* Slightly more vertical padding for touch */
+    width: 100%;
+    background-color: rgba(0, 51, 102, 0.02); /* Faint tint to make it pop */
+  }
+
+  .insight .key-insight {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase; /* Makes 'Key Insight' look like a label */
+  }
+
+  /* 3. Steps (Numbered List) */
+  .content .steps {
+    padding-left: 24px; /* Ensure numbers don't fall off the edge */
+    gap: 20px; /* More space between steps for mobile reading */
+  }
+
+  /* 4. Process Layout */
+  .process .layout-and-hierarchy {
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .process .process-title {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .name {
+    white-space: normal; /* Allows long process titles to wrap */
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  /* 2. Responsive Images (The "Picture" Reset) */
+  .picture, 
+  .picture-4, 
+  .user-flow .picture-4, 
+  .card-background-system .picture, 
+  .input-field-system .picture {
+    width: 100% !important; /* Forces images to fill the screen width */
+    height: auto !important; /* Maintains the original design's aspect ratio */
+    max-width: none;
+    margin-top: 16px;
+  }
+
+  /* 3. Content Stacking */
+  .content {
+    flex-direction: column; /* Stacks side-by-side text/images vertically */
+    gap: 16px;
+  }
+
+  /* 4. The Number Border */
+  .border {
+    width: 24px; /* Slightly smaller for mobile */
+    height: 28px;
+    flex-shrink: 0; /* Prevents the number box from getting squashed */
+  }
+
+  .image-container, 
+  .scale-picture, 
+  .scale-picture .image-container,
+  .user-persona .image-container,
+  .user-flow .image-container,
+  .card-background-system .image-container,
+  .input-field-system .image-container {
+    width: 100% !important; /* Forces full width on mobile */
+    height: auto !important; /* Removes fixed heights */
+    min-height: 180px; /* Ensures containers don't collapse */
+    aspect-ratio: auto; /* Let the content define the ratio */
+  }
+
+  /* 2. Specific Height Overrides (If you want to maintain some verticality) */
+  .attendance-logs-info .image-container {
+    height: 400px !important; /* Scaled down from 591px */
+  }
+
+  /* 3. Aura Object Positioning */
+  /* On mobile, center-center is usually safer than extreme offsets */
+  .picture-2, .picture-aura, .picture-aura-vl {
+    width: 100% !important;
+    height: auto !important;
+    object-position: center center !important; 
+  }
+
+  /* 4. Font Explanations (Captions) */
+  .font-explain {
+    font-size: 11px;
+    padding: 0 16px;
+    line-height: 1.4;
+    margin-top: 8px;
+    color: var(--gray-40); /* Slightly lighter for less visual noise */
+  }
+
+  /* 5. Scale Picture Layout */
+  .scale-picture {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .desktop-info .image-container,
+  .voucher-list-info .image-container,
+  .dashboard-aura-info .image-container,
+  .view-details-info .image-container {
+    height: auto !important; 
+    min-height: 300px;
+    max-height: 600px; /* Limits the vertical scroll for single images */
+    border-radius: 12px; /* Softer corners for mobile */
+  }
+
+  /* 2. Smaller Set Heights */
+  .second-set-2 .image-container {
+    height: auto !important;
+    min-height: 250px;
+  }
+
+  /* 3. The Overlay (Crucial for Touch UX) */
+  /* Since mobile has no hover, we make the overlay slightly visible or hide it if it's just for effect */
+  .image-overlay,
+  .card-background-system .image-overlay,
+  .input-field-system .image-overlay,
+  .user-persona .image-overlay,
+  .user-flow .image-overlay {
+    width: 100% !important; /* Fixes the 400px width break */
+    height: 100% !important;
+    opacity: 1; /* Make it visible on mobile... */
+    background: linear-gradient(to top, rgba(0, 12, 26, 0.8), transparent); /* ...but only as a bottom gradient */
+    justify-content: flex-end; /* Move text to bottom */
+    padding-bottom: 20px;
+    backdrop-filter: none; /* Disable blur to keep mobile performance high */
+    pointer-events: none; /* Let the user scroll through the overlay */
+  }
+
+  /* 4. Overlay Content */
+  .image-overlay .text-wrapper, .image-overlay .icon {
+    transform: scale(0.9);
+  }
+
+  .scale-picture .image-overlay,
+  .second-set .image-overlay,
+  .employees-info .image-overlay,
+  .second-set-2 .image-overlay,
+  .modals .image-overlay,
+  .attendance-logs-info .image-overlay,
+  .voucher-list-info .image-overlay,
+  .view-details-info .image-overlay,
+  .desktop-info .image-overlay {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1; /* Always visible on mobile to show metadata */
+    background: linear-gradient(to top, rgba(0, 12, 26, 0.9) 0%, transparent 50%); 
+    justify-content: flex-end; /* Push text to the bottom */
+    padding-bottom: 20px;
+    backdrop-filter: none; /* Disable for performance on older devices */
+    pointer-events: none; /* Allow users to click through to the actual link if needed */
+  }
+
+  /* 2. Hide Content Icons on Mobile (Optional) */
+  /* If the icons make it look too busy, hide them and just show the text */
+  .image-overlay .icon {
+    display: none;
+  }
+
+  /* 3. Text Styling inside Overlays */
+  .image-overlay .text-wrapper {
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    width: 90%;
+  }
+
+  .dashboard-aura-info .image-overlay,
+  .voucher-list-info .image-overlay,
+  .view-details-info .image-overlay,
+  .desktop-info .image-overlay {
+    height: 100% !important; /* Force overlays to match responsive image heights */
+    border-radius: 12px; /* Standardize corners for mobile */
+  }
+
+  /* 2. Standardize Buttons for Touch */
+  /* On mobile, tiny buttons are hard to tap. We want a minimum "hit area". */
+  .overlay-btn, 
+  .modals .overlay-btn, 
+  .desktop .overlay-btn {
+    padding: 12px 24px !important; 
+    font-size: 14px !important;
+    width: 80%; /* Make them prominent on mobile */
+    max-width: 200px;
+    text-align: center;
+  }
+
+  /* 3. The Desktop-3 Specific Button */
+  /* If this is your main CTA, keep it large but manageable */
+  .desktop-3 .overlay-btn {
+    padding: 14px 28px !important;
+    font-size: 16px;
+  }
+
+  /* 4. Disable Hover Transform */
+  /* Prevents the button from getting "stuck" in a zoomed state after a tap */
+  .overlay-btn:hover {
+    transform: none;
+  }
+  
+  .overlay-btn:active {
+    transform: scale(0.95); /* Provide tactile feedback on press instead */
+  }
+
+  .text-side,
+  .refinement .text-side {
+    width: 100% !important; /* Allow text to fill the screen */
+    margin-top: 0;
+  }
+
+  /* 2. Process Section Spacing */
+  /* Reduce the massive 48px gaps for mobile so the user doesn't have to scroll too much */
+  .process .grid-and-spacing,
+  .process .typography,
+  .process .refinement,
+  .understanding-the-user-and-workflow .user-flow {
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  /* 3. Button Layout for Overlays */
+  /* Stack 'Zoom' and 'Stay' buttons vertically for better thumb access */
+  .overlay-btn {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  /* 4. Refinement Content */
+  .refinement .content {
+    flex-direction: column; /* Stacks text and comparison images */
+  }
+
+  .design-system-and-ui-decisions,
+  .final-screens,
+  .results-and-impact,
+  .reflection {
+    padding: 0 24px 48px 24px; /* Matches the vertical rhythm of other sections */
+  }
+
+  /* 2. More Case Studies (Footer Section) */
+  .more-case-studies {
+    padding: 64px 24px 64px 24px;
+    gap: 16px;
+  }
+
+  /* 3. System Section Spacing */
+  .design-system-and-ui-decisions .typography-scale,
+  .design-system-and-ui-decisions .button-system,
+  .card-background-system,
+  .input-field-system {
+    margin-top: 32px; /* Tighter for mobile scannability */
+  }
+
+  /* 4. Color & Semantic Labels */
+
+  /* 5. Design System Title */
+  .design-system-title {
+    gap: 12px;
+    width: 100%;
+  }
+
+
+  /* 2. Unified Swatch Sizing (Targets ALL swatches) */
+  /* This selector catches the generic list AND the specific overrides */
+/* 1. Force the containers to be horizontal rows */
+    .primary-colors, 
+    .neutral-colors, 
+    .semantic-colors,
+    .colors, 
+    .second-row {
+        display: flex !important;
+        flex-direction: row !important; /* This fixes the vertical stacking */
+        flex-wrap: wrap !important;    /* This allows them to wrap to a new line */
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: 10px !important;           /* Space between swatches */
+        width: 100% !important;
+    }
+
+/* 2. Unified Sizing for all Swatch Containers */
+/* This catches the list of classes you provided and forces them to align */
+    .primary-1, .primary-10, .primary-20, .primary-30, .primary-40, .primary-50, 
+    .primary-70, .primary-80, .primary-90, .gray-10, .gray-20, .gray-30, 
+    .gray-40, .gray-50, .gray-70, .gray-80, .gray-90, .light-text, .bg, 
+    .input-fields, .primary-mono, .secondary, .secondary-2, .tertiary,
+    .primary-aura, .secondary-aura, .numbers, .titles, .main-bg, .tertiary-2 {
+        display: flex !important;
+        flex-direction: column !important; /* Stack the square over the text */
+        align-items: center !important;
+        width: calc(25% - 8px) !important; /* Exactly 4 per row */
+        min-width: 65px !important;        /* Prevents getting too small */
+        flex: 0 0 auto !important;
+        margin-bottom: 12px;
+    }
+
+    .success-50,
+    .warning-50 {
+        width: 65px;
+    }
+
+/* 3. Ensure all Rectangles match exactly */
+
+  /* 3. The Rectangle Shape */
+  .rectangle {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* Perfect square */
+    height: auto !important;
+    align-self: stretch;
+    border-radius: 4px;
+  }
+
+  /* 4. Text Label Polish */
+  .color-name, .hex, .primary, .neutral, .semantic {
+    font-size: 9px !important;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    max-width: 100% !important;
+    word-break: break-word;
+  }
+
+  .primary, .neutral, .semantic {
+    text-align: left;
+  }
+
+  .name-and-hex {
+    width: 100%;
+    gap: 2px;
+  }
+
+  .typography-scale .scale {
+    width: 100% !important; /* Allow the scale to breathe */
+    gap: 12px;
+  }
+
+  /* 2. Content Alignment */
+  /* Stack the "Label" and the "Example Text" vertically on mobile */
+  .typography-scale .content,
+  .card-background-system .content,
+  .input-field-system .content {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  /* 3. Color Labels */
+  .color-name {
+    max-width: none; /* Let the name wrap naturally on mobile */
+    font-size: 10px;
+  }
+
+  .hex {
+    font-size: 9px;
+  }
+
+  /* 4. Scale Titles (H1, H2, etc.) */
+  .scale .scale-title {
+    font-size: 16px; /* Slightly smaller for mobile headers */
+  }
+
+  .scale .scale-info,
+  .scale .scale-info-aura {
+    gap: 24px; /* Reduce the massive 64px/51px gaps */
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* 2. Responsive Image Scaling */
+  .scale-pic {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+    border-radius: 12px;
+  }
+
+  /* 3. Button Layouts */
+  .button-types {
+    flex-direction: column; /* Stack buttons vertically for easier tapping */
+    gap: 12px;
+  }
+
+  /* 4. Aura Button Width Fix */
+  .primary-button-aura {
+    width: 100% !important; /* Allow it to fit the screen */
+    max-width: 400px;
+    height: 48px; /* Slightly taller for better touch-target (UX standard) */
+  }
+
+  /* 5. Padding Adjustments for Accessibility */
+  .primary-button, 
+  .destructive-button, 
+  .primary-button-3 {
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .rectangle-aura {
+    width: 100px; /* Scale down slightly for mobile screens */
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    backdrop-filter: blur(15px); /* Reduce blur depth for mobile performance */
+  }
+
+  /* 2. Responsive Square Buttons */
+  /* On mobile, 120px might be too large if they are in a grid. */
+  .square-button {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* 3. Button Padding & Accessibility */
+  /* Ensure secondary buttons are comfortable for thumb-tapping */
+  .secondary-button, 
+  .tertiary-button, 
+  .secondary-button-2 {
+    width: 100%; /* Stack buttons on mobile */
+    padding: 14px 24px;
+    border-radius: 12px;
+  }
+
+  .secondary-button-3 {
+    width: 100%;
+    padding: 16px 32px;
+  }
+
+  /* 4. Disable Hover for Touch */
+  /* Since there's no hover on mobile, we ensure the button 
+     appearance is clear and tap-friendly. */
+  .secondary-button:active {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle tap feedback */
+  }
+
+  .split-button {
+    width: 100%; /* Make it full width for easier access */
+    justify-content: center;
+  }
+
+  .split-button-border {
+    padding: 14px 20px; /* Increase height for a better touch target */
+    flex: 1; /* Let the main action take up most of the space */
+  }
+
+  /* 2. Text Scaling */
+  /* Prevent labels from overflowing on smaller screens */
+  .button-name {
+    font-size: 14px;
+    white-space: normal; /* Allow long button text to wrap if necessary */
+    text-align: center;
+  }
+
+  /* 3. Link Padding */
+  /* Standard links are often too close together on mobile. 
+     Adding a 'hit area' prevents accidental clicks. */
+  .link, .link-aura {
+    padding: 8px 0;
+    display: inline-block;
+  }
+
+  /* 4. Aura Button Contrast */
+  /* Ensure the dark text on the light green button is crisp */
+  .primary-button-aura .button-name {
+    font-weight: 600; /* Extra weight for readability on small screens */
+  }
+
+  /* 2. Dropdown Tap Target */
+  /* 55px height is great for mobile accessibility (minimum target is usually 44px). */
+  .dropdown {
+    height: 48px; 
+    padding: 12px 16px;
+  }
+
+  /* 3. Section Spacing */
+  /* "pic-contents" often holds your heavy mockups; gap: 40px might be too 
+     much vertical space on a small screen. */
+  .pic-contents,
+  .pic-contents-aura {
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* 4. Center-aligning for Mobile */
+  .attendance-logs, .daily-qr-code, .dashboard {
+    width: 100%;
+    align-items: center;
+  }
+
+  .voucher-list-pic,
+  .dashboard-aura-pic,
+  .desktop-pic,
+  .view-details-pic {
+    height: auto !important;
+    max-height: 80vh; /* Keeps tall desktop scrolls manageable on mobile */
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  /* 2. Stack the Sets */
+  /* This turns your horizontal "sets" into a clean vertical list for scrolling */
+  .first-set, .second-set, .third-set, 
+  .second-set-2, .first-set-2, .first-set-3,
+  .first-set-aura {
+    flex-direction: column !important;
+    gap: 32px; /* Breathing room between different screen groups */
+    align-items: center;
+  }
+
+  /* 3. Aura Set Adjustment */
+  .first-set-aura {
+    gap: 24px;
+  }
+
+  /* 4. Captions Styling */
+  .pic-name {
+    font-size: 14px;
+    margin-top: 12px; /* Adds space after the image on small screens */
+    color: var(--gray-40); /* Slightly softer for mobile reading */
+  }
+
+  .modals-pic {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    min-height: 150px;
+  }
+
+  /* 2. Grid Alignments */
+  /* Reverting fixed heights for mobile scanability */
+  .daily-qr-code-pic, .dashboard-pic, .employees-pic, .attendance-logs-pic, .attendance-logs-info .image-container {
+    height: auto !important;
+    min-height: 200px;
+  }
+
+  /* 3. Text & Content Spacing */
+  /* Reflection and Results usually contain long-form text. 
+     Increasing gap/line-height here helps with mobile reading. */
+  .results-content {
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .reflection-content {
+    gap: 32px; /* Tightening the gap slightly for mobile scrolling */
+  }
+
+  .results-text {
+    line-height: 1.6; /* Standard accessibility for reading long text */
+  }
+
+  /* 4. Prototype Link Visibility */
+  .prototype-link {
+    display: block;
+    padding: 12px 0;
+    text-decoration: underline; /* Clearer affordance for touch screens */
+    white-space: normal; /* Allow long URLs to wrap if necessary */
+  }
+
+  .reflection-text {
+    width: 100% !important; /* Force text to wrap to the screen */
+    margin-right: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .reflection-box {
+    padding: 12px 16px; /* Slightly more vertical padding for breathing room */
+    border-left-width: 3px; /* Slightly thicker for visual impact on mobile */
+  }
+
+  /* 2. The Decorative Divider */
+  /* We reset the fixed offsets so the line spans the full width of the screen */
+  .reflection::after {
+    left: 24px; 
+    right: 24px;
+    background-color: var(--gray-90); /* Subtle finish */
+  }
+
+  /* 3. Future Improvements & Options */
+  .future-improvements, .option {
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  .next-case-study-border {
+    display: flex !important;
+    flex-direction: row !important; /* Keep items side-by-side */
+    align-items: center !important;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    height: auto !important;        /* Let the box grow with the title */
+    gap: 16px !important;
+}
+
+/* 2. The Text Wrapper (The "Magic" fix for overlapping) */
+.next-case-study-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;           /* Take up all available space between image and arrow */
+    min-width: 0;      /* Essential: allows the title to wrap instead of overflowing */
+    gap: 16px;
+}
+
+/* 3. Title Wrapping */
+.next-case-study-title {
+    font-size: 16px !important;
+    line-height: 1.4;
+    margin-top: 4px;
+    white-space: normal; /* Force wrapping */
+    word-wrap: break-word;
+    display: block;
+    width: 100%;
+}
+
+/* 4. Thumbnail Protection */
+.next-case-study-pic {
+    width: 64px !important;
+    height: 64px !important;
+    flex-shrink: 0;     /* Stop the title from "squeezing" the image */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 5. Arrow Positioning */
+.more-case-studies-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;     /* Stop the title from squeezing the arrow */
+    margin-left: auto;  /* Pushes it to the far right */
+}
+
+  #lightbox-close {
+    position: fixed; /* Switch from absolute to fixed */
+    top: 20px;
+    right: 20px;
+    font-size: 40px; /* Slightly smaller for mobile thumbs */
+    background: rgba(0, 0, 0, 0.3); /* Add a subtle backing for visibility */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2100;
+  }
+
+  /* 2. Lightbox Image Scaling */
+  #lightbox-img {
+    max-width: 95%;
+    border-radius: 8px; /* Softer look for mobile */
+  }
+
+
+  /* 3. Smooth Scrolling */
+  #lightbox-overlay {
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+  }
+
+  /* 4. Padding Adjustment */
+  /* Give extra bottom padding so the very end of the mockup 
+     isn't cut off by the edge of the screen. */
+  #lightbox-overlay.wide-view,
+  #lightbox-overlay.mobile-view {
+    padding: 80px 0; 
+  }
+  
+}
+
 
 
