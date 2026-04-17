@@ -3227,34 +3227,37 @@ strong {
     }
 }
 
-/* Specific Mobile Fixes */
-@media (max-width: 600px) {
-    .header {
-        height: 70px;
-        padding: 0 16px !important;
+@media (max-width: 768px) {
+    /* Hide the buttons completely */
+    .zoom-btn, .stay-btn, .image-overlay {
+        display: none !important;
     }
 
-    .header .logo {
-        transform: scale(0.8); /* Shrink logo slightly for small headers */
-        margin-top: 20px;
+    /* Make the container look tappable */
+    .image-container {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent; /* Removes the ugly blue box on tap */
     }
 
-    .header .back-to-portfolio {
-        display: none; /* Hide text, keep arrow to save space */
-    }
-
-    .bottom-part {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-    }
-
-    .colors, .second-row {
-        flex-wrap: wrap; /* Allow color swatches to wrap to next line */
-        justify-content: center;
+    /* Optional: Add a small zoom icon in the corner so they know they can tap */
+    .image-container::after {
+        content: "Tap to enlarge";
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        background: rgba(0, 12, 26, 0.6);
+        color: white;
+        padding: 4px 8px;
+        font-size: 10px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        pointer-events: none;
+        opacity: 0.8;
     }
 }
 
+/* Specific Mobile Fixes */
 @media (max-width: 768px) {
   /* 1. Reset Header Padding */
   .header {
@@ -3279,6 +3282,7 @@ strong {
   .header .back-to-portfolio {
     font-size: 12px;
     letter-spacing: 0.5px;
+    display: none;
   }
 
   /* 4. Glassmorphism Performance */
