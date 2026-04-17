@@ -3227,7 +3227,7 @@ strong {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* Hide the buttons completely */
     .zoom-btn, .stay-btn, .image-overlay {
         display: none !important;
