@@ -1316,3 +1316,489 @@ body.page-enter {
         transform: scale(1);
     }
 }
+
+@media (max-width: 768px) {
+  .header {
+        padding: 0 20px !important; 
+        height: 70px !important; /* Slightly shorter for mobile but readable */
+    }
+
+    /* 2. Fix the minimized height */
+    .header.minimized {
+        height: 54px !important;
+    }
+
+    /* 3. Hide the "Back to Portfolio" text to save space */
+    .header .back-to-portfolio {
+        display: none !important;
+    }
+
+    /* 4. Center the back-button vertically in the shorter header */
+    .header .back-button {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        left: 0;
+    }
+
+    /* 5. Scale the logo down so it doesn't feel cramped */
+    .header .logo {
+        transform: scale(0.7);
+        margin-top: 24px !important; /* Remove the top margin designed for desktop height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Ensure the logo stays centered even if back-button exists */
+    .header .header-content {
+        justify-content: center;
+    }
+
+    /* 2. Page Indicator Scaling */
+    /* These are quite wide (44px/48px). We shrink them to prevent overlap with the logo. */
+    .header .page-indicator, 
+    .header .next-page-indicator {
+        transform: translateY(-50%) scale(0.8) !important; /* Shrink the whole group */
+        right: 0 !important; 
+        gap: 3px !important; /* Tighter gap */
+    }
+
+    .hero-photo,
+    .hero-details,
+    .objective,
+    .overview,
+    .key-highlights,
+    .final-designs,
+    .design-lead-feedback,
+    .reflection,
+    .more-mini-projects {
+        padding-left: 20px !important;  /* Standard mobile "safe area" */
+        padding-right: 20px !important;
+    }
+
+    /* 2. Specific Section Adjustments */
+    .hero-photo {
+        padding-top: 80px !important; /* Makes room for the fixed glassmorphism header */
+        padding-bottom: 24px !important;
+    }
+
+    .reflection {
+        padding-bottom: 60px !important; /* Reduced from 108px for better mobile flow */
+        gap: 32px !important; /* Prevents giant empty gaps between text blocks */
+    }
+
+    /* 3. Hero Image Scaling */
+    .hero-pic {
+        height: 280px !important; /* Shorter height so the title is visible on page load */
+        border-radius: 12px;      /* Softer look for mobile */
+        object-position: center;  /* Better framing for small screens */
+    }
+
+    /* 4. Hero Info & Tags */
+    .hero-info {
+        gap: 12px !important; /* Slightly more breathing room for touch scanning */
+    }
+
+    /* 5. Tag Refinement */
+    /* On mobile, tags can stack or wrap, so we ensure they don't break the layout */
+    [class*="tag-border-header-"] {
+        padding: 6px 10px !important; /* Better "hit area" and visual presence */
+        border-radius: 4px;
+    }
+
+    [class*="tag-name-header-"] {
+        font-size: 11px !important; /* Slightly smaller for tight mobile rows */
+        letter-spacing: 0.02em !important;
+        white-space: nowrap; /* Keep tags on one line internally */
+    }
+
+    /* 2. Project Title - The "Overflow" Fix */
+    .project-title {
+        font-size: 28px !important; /* Matches a standard mobile H2/H3 */
+        line-height: 1.2 !important;
+        white-space: normal !important; /* CRITICAL: Allows title to wrap to next line */
+        width: 100% !important;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+    /* 3. Section Titles (The gray sub-labels) */
+    .title {
+        font-size: 12px !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase; /* Makes "OBJECTIVE" or "OVERVIEW" clearer */
+        margin-bottom: 4px;
+    }
+
+    /* 4. Horizontal Line Spacing */
+    .line {
+        margin: 16px 0 !important; /* Consistent vertical rhythm */
+    }
+
+    .contents, 
+    .objective .contents, 
+    .design-lead-feedback .contents {
+        font-size: 15px !important; /* Slightly more readable for mobile */
+        line-height: 1.6 !important;
+        width: 100% !important;
+    }
+
+    /* 2. Fix List Items */
+    .key-highlights-list {
+        padding-left: 20px !important; /* Reduces indent for mobile */
+        gap: 12px !important;
+    }
+
+    /* 3. Image Layouts: Break the 657px fixed width */
+    .design-pics, 
+    .design-pics-project5, 
+    .project7-pics {
+        width: 100% !important;
+        flex-direction: column !important; /* Stack columns into one vertical stack */
+        gap: 16px !important;
+    }
+
+    /* 4. The "Web/Mobile Version" Height Fix */
+    .web-version, 
+    .mobile-version {
+        width: 100% !important;
+        height: auto !important; /* CRITICAL: Remove the 1639px fixed height */
+        max-height: none !important;
+        object-fit: contain; /* Ensures the whole screen is visible */
+        box-shadow: none !important; /* Optional: simplified look on mobile */
+    }
+
+    /* 5. Two-Design Pics Grid */
+    .two-design-pic {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .light-mode-pics,
+    .dark-mode-pics,
+    .old-designs-pics,
+    .new-designs-pics,
+    .new-designs-pics-second {
+        flex-direction: column !important; /* Stack images on top of each other */
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Responsive Screen Sizing */
+    /* Remove fixed pixel widths so they adapt to the phone screen */
+    .long-screen,
+    .screen,
+    .web-screen,
+    .f-pattern-web-screen,
+    .f-pattern-mobile-screen {
+        width: 100% !important; /* Take full width of the mobile container */
+        height: auto !important; /* Maintain aspect ratio naturally */
+        max-width: 100%;
+    }
+
+    /* 3. Typography: Labels */
+    .mode {
+        font-size: 10px !important;
+        letter-spacing: 0.1em !important;
+        margin-bottom: 4px;
+    }
+
+    /* 4. Spacing between sections */
+    .new-designs-pics-second {
+        margin-top: 16px !important; /* Keep the consistent gap between rows */
+    }
+
+    /* 5. Layout Logic */
+    .light-mode-and-dark-mode,
+    .old-and-new-designs {
+        gap: 40px !important; /* Add more space between the two major comparison blocks */
+    }
+
+    [class*="project-"], 
+    [class*="lm-"], 
+    .image-container,
+    .z-pattern-web-screen,
+    .z-pattern-mobile-screen {
+        width: 100% !important; /* Take up the full width of the phone */
+        height: auto !important;  /* Let the height adjust naturally to the image */
+        border-radius: auto;
+    }
+
+    /* 2. Fix the 1639px Height Issue */
+    /* This specifically fixes the tall project screens (like in Project 7) */
+    .project-7, 
+    .project-7-1 {
+        height: auto !important;
+        max-height: 500px !important; /* Keep long scrolls manageable on a phone */
+        object-fit: cover;
+        object-position: top; /* Show the top of the design first */
+    }
+
+    /* 3. Image Overlay Interaction */
+    /* On mobile, there is no "hover". We need to ensure the overlay 
+       looks good when tapped or is slightly visible. */
+    .image-overlay {
+        opacity: 0; /* Keeps it clean until tapped */
+        backdrop-filter: blur(6px) !important;
+        gap: 8px !important;
+    }
+
+    /* 4. Overlay Text/Icon Scale */
+    /* Shrink the contents of the overlay so they don't look huge on mobile */
+    .image-overlay > * {
+        transform: scale(0.85);
+    }
+
+    .overlay-btn,
+    [class*="project-"] .overlay-btn,
+    [class*="lm-"] .overlay-btn {
+        padding: 12px 24px !important; /* Standard mobile button size */
+        min-width: 120px;
+        min-height: 44px; /* Apple/Google's recommended minimum touch target */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px !important; /* Ensure text is readable */
+        border-radius: 100px !important; /* Pill shape looks more "tappable" on mobile */
+    }
+
+    /* 2. Remove Hover Dependency */
+    /* Since mobile doesn't have hover, we make sure the overlay transitions 
+       smoothly when the container is tapped. */
+    .image-container:active .image-overlay {
+        opacity: 1;
+    }
+
+    /* 3. Button Feedback */
+    /* Instead of scale(1.1) which can be glitchy on touch, use a slight darkening */
+    .overlay-btn:active {
+        transform: scale(0.95) !important; /* Visual confirmation of a tap */
+        background-color: var(--main-accent-30) !important;
+    }
+
+    /* 4. Color Contrast */
+    /* Ensure the zoom button stands out against the blurred background */
+    .zoom-btn {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .stay-btn, 
+    [class*="project-"] .stay-btn, 
+    [class*="lm-"] .stay-btn {
+        display: none !important;
+    }
+
+    /* 2. Responsive Mood Board Grid */
+    .first-row, 
+    .components-to-mood-board,
+    .design-lead-feedback-contents {
+        flex-direction: column !important; /* Stack them vertically */
+        gap: 20px !important;
+    }
+
+    /* 3. Reset all specific picture dimensions */
+    .components,
+    .boards,
+    .typography-board,
+    .first-photo,
+    .second-photo,
+    .photo {
+        width: 100% !important; /* Fill the screen width */
+        height: auto !important; /* Maintain aspect ratio */
+        max-width: 100%;
+        border-radius: 8px !important;
+    }
+
+    /* 4. Column Wrapper adjustment */
+    .first-picture, .second-picture, .third-picture, .fourth-picture {
+        width: 100% !important;
+        display: flex !important;
+    }
+
+    /* 5. Feedback Section */
+    .design-lead-feedback-contents {
+        align-items: stretch !important;
+    }
+
+    .quote-icon {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 8px;
+    }
+
+    /* 2. Mini-Cards Grid: Stack them for mobile thumbs */
+    .mini-cards-grid {
+        flex-direction: column !important; /* Stack cards vertically */
+        gap: 20px !important;
+    }
+
+    /* 3. The Box (Card) Styling */
+    .box {
+        padding: 0 0 16px 0 !important; /* Remove side padding for full-bleed image look */
+        border-radius: 12px;
+        overflow: hidden; /* Clips the image corners to the card */
+    }
+
+    /* 4. The Card Image */
+    .box-pic,
+    .box-pics {
+        width: 100% !important; /* Make image fill the card width */
+        height: 180px !important; /* Slightly taller for better mobile presence */
+        margin: 0 !important; /* Reset those negative margins */
+    }
+
+    /* 5. Card Info & Tags */
+    .box-info {
+        padding: 12px 16px !important; /* Add padding back to the text area */
+        gap: 6px !important;
+    }
+
+    /* Normalize the card tags for mobile */
+    [class*="tag-border-"] {
+        padding: 4px 8px !important;
+        border-radius: 4px;
+    }
+
+    /* 6. Interaction: Remove hover, add active state */
+    .mini-cards-grid .box:hover {
+        transform: none !important; /* Hover doesn't exist on touch */
+    }
+
+    .mini-cards-grid .box:active {
+        transform: scale(0.98) !important; /* "Press" effect when tapped */
+        background-color: #ebebeb !important;
+    }
+
+    [class*="tag-name-"] {
+        font-size: 10px !important; 
+        font-weight: 600 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    /* 2. Card Project Titles */
+    /* In the "More Mini Projects" section, we ensure titles don't overflow */
+    .more-mini-projects .project-title {
+        font-size: 16px !important; /* Slightly larger for clear hierarchy */
+        white-space: normal !important; /* Allow wrapping */
+        width: 100% !important;
+        line-height: 1.3 !important;
+    }
+
+    /* 3. Bottom Back Button */
+    /* We make this easier to tap with a thumb */
+    .back-button {
+        padding: 12px 0; /* Increase hit area */
+        margin-top: -1px !important;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .back-button .back-to-portfolio {
+        font-size: 14px !important; /* Larger text for the bottom nav */
+    }
+
+    /* 4. Spacing for the Footer Area */
+    .more-mini-projects {
+        padding-bottom: 60px !important; /* Extra room so it doesn't feel cut off */
+    }
+
+    .design-pic-with-label {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 32px !important; /* Larger gap to clearly separate the two versions */
+    }
+
+    /* 2. Image Scaling */
+    /* Resets the fixed 400px widths so they fit the phone screen */
+    .first-pic,
+    .second-pic,
+    .original,
+    .redesigned {
+        width: 100% !important;
+        height: auto !important; /* Keeps the 1.41 aspect ratio intact */
+    }
+
+    /* 3. Typography: Image Labels */
+    .pic-title {
+        font-size: 14px !important;
+        margin-top: 4px;
+        color: var(--gray-40) !important;
+    }
+
+    /* 4. Back to Top Button */
+    /* We move it slightly so it doesn't cover important text or buttons */
+    .back-to-top {
+        bottom: 24px !important;
+        right: 20px !important;
+        width: 44px !important; /* Standard touch target size */
+        height: 44px !important;
+        background: var(--gray-93) !important; /* Matching your glassmorphism header */
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* 5. Back Button (Footer) */
+    /* Ensures the back-to-portfolio text is readable but not wrapped weirdly */
+    .back-to-portfolio {
+        font-size: 14px !important;
+        white-space: normal !important;
+    }
+
+    #lightbox-close {
+        top: 20px !important;
+        right: 20px !important;
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px !important;
+        line-height: 1;
+        backdrop-filter: blur(10px);
+    }
+
+    /* 2. Lightbox Image Safety */
+    /* Ensure the image doesn't 'jump' on load */
+    #lightbox-img {
+        max-width: 95% !important;
+        transform: scale(0.95) !important; /* Slightly smaller for mobile context */
+    }
+
+    /* 3. Smooth Animations */
+    /* Prevent the 'slideInRight' from causing horizontal scrollbars */
+    body {
+        overflow-x: hidden; 
+    }
+
+    @keyframes slideInRight {
+        from { 
+            opacity: 0; 
+            transform: translateX(10px); /* Reduced movement for mobile smoothness */
+        }
+        to { 
+            opacity: 1; 
+            transform: translateX(0); 
+        }
+    }
+
+    .hero-photo {
+        /* On mobile, we reduce the scale intensity for better performance */
+        animation: heroScaleMobile 1.2s cubic-bezier(0.2, 1, 0.3, 1) backwards;
+        animation-delay: 0.3s; /* Slightly longer delay to allow the slide-in to finish */
+        will-change: transform, opacity; /* Optimizes the GPU for a smoother fade */
+    }
+
+    @keyframes heroScaleMobile {
+        from {
+            opacity: 0;
+            transform: scale(0.98); /* Less drastic scale to prevent edge-clipping */
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
