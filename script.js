@@ -9,11 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
 
     // 2. Nav Indicator Function
-    function moveIndicator(element) {
-        if (!element || !indicator) return;
-        indicator.style.width = `${element.offsetWidth}px`;
-        indicator.style.left = `${element.offsetLeft}px`;
-    }
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        // 2. Optimized Nav Indicator
+        function moveIndicator(element) {
+            if (!element || !indicator) return;
+            
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                // Mobile: Vertical bar on the left of the link
+                indicator.style.width = `4px`;
+                indicator.style.height = `${element.offsetHeight}px`;
+                indicator.style.left = `0px`;
+                indicator.style.top = `${element.offsetTop}px`;
+            } else {
+                // Desktop: Horizontal underline
+                indicator.style.width = `${element.offsetWidth}px`;
+                indicator.style.height = `2px`;
+                indicator.style.left = `${element.offsetLeft}px`;
+                indicator.style.top = `auto`; 
+            }
+            indicator.style.opacity = "1";
+        }
 
 // 3. Consolidated Scroll Listener
 window.addEventListener('scroll', () => {
@@ -361,6 +379,60 @@ document.querySelectorAll('.image-container').forEach(container => {
     });
 });
 
+document.querySelectorAll('.image-container').forEach(container => {
+    container.addEventListener('click', (e) => {
+        // Only trigger the "whole container click" on mobile/tablet
+        if (window.innerWidth <= 1024) {
+            const img = container.querySelector('img');
+            const lightbox = document.getElementById('lightbox-overlay');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            if (img && lightbox && lightboxImg) {
+                lightboxImg.src = img.src;
+                
+                // Keep your existing wide-view/mobile-view logic here
+                lightbox.classList.remove('wide-view', 'mobile-view');
+                if (container.classList.contains('project-7') || container.classList.contains('cs-3d')) {
+                    lightbox.classList.add('wide-view');
+                } else if (container.classList.contains('project-7-1') || container.classList.contains('cs-3m')) {
+                    lightbox.classList.add('mobile-view');
+                }
+
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    });
+});
+
+document.querySelectorAll('.image-container').forEach(container => {
+    container.addEventListener('click', (e) => {
+        // Only trigger the "Full Area" tap on mobile devices
+        if (window.innerWidth <= 1024) {
+            // Find the image inside this container
+            const img = container.querySelector('img');
+            const lightbox = document.getElementById('lightbox-overlay');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            if (img && lightbox && lightboxImg) {
+                lightboxImg.src = img.src;
+                
+                // Clear previous views and add mobile logic
+                lightbox.classList.remove('wide-view', 'mobile-view');
+                
+                // If the container is a mobile-specific screenshot (like your OJT dashboard)
+                if (container.classList.contains('mobile-version') || 
+                    container.classList.contains('project-7-1')) {
+                    lightbox.classList.add('mobile-view');
+                }
+
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    });
+});
+
 // 3. CLOSE Lightbox
 const closeLightbox = () => {
     lightbox.classList.remove('active');
@@ -429,3 +501,4 @@ document.addEventListener('touchend', e => {
     checkDirection();
 });
 });
+
